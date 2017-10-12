@@ -19,7 +19,7 @@ namespace HumanPlayer
             do
             {
                 string move = Console.ReadLine();
-                ok = true;
+                ok = false;
                 try
                 {
                     string[] coordinates = move.Split(' ');
@@ -30,7 +30,7 @@ namespace HumanPlayer
                 catch (Exception)
                 {
                     Console.WriteLine("You've entered wrong cell coordinates. Please try again");
-                    ok = false;
+                    ok = true;
                 }
             } while (ok);
 
