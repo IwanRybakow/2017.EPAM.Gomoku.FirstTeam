@@ -50,7 +50,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
             if (firstCoord[0] != 0)
             {
                 byte[] temp = firstCoord;
-                firstCoord[0] = 10;
+                firstCoord = new byte[2] { 0, 0 };
                 return new CellCoordinates() { X = temp[0], Y = temp[1] };
                 
             }
