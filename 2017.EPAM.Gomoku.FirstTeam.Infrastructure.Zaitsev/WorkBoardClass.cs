@@ -19,7 +19,6 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
         int[] BoundOfWorkBoard { get; set; }
         List<int[]> dangerousCells; // опасные ячейки
         const double MAX_DISTANCE = 2.82;   // максимальное расстояние от рабочей области (корень из 8-ми)
-        List<int[]> coords;
         int size;   //размеры игрового поля
         bool workBoundNeed;
         /// <summary>
@@ -69,6 +68,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
         /// <param name="newBoard"></param>
         public List<int[]> SetWorkBoard(int[,] newBoard)
         {
+            List<int[]> coords;
             // если рабочее поле не требуется, возвращаем координаты
             if (!workBoundNeed)
             {
@@ -110,11 +110,11 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
                 for (int j = 0; j < newBoard.GetLength(1); j++)
                 {
                     // если ячейка за пределами рабочей области и занята, добавляем ее в список
-                    if (!(i >= BoundOfWorkBoard[0] && j >= BoundOfWorkBoard[1] &&
-                         i <= BoundOfWorkBoard[2] && j <= BoundOfWorkBoard[3]) &&
+                    if (!(i >= BoundOfWorkBoard[1] && j >= BoundOfWorkBoard[0] &&
+                         i <= BoundOfWorkBoard[3] && j <= BoundOfWorkBoard[2]) &&
                        newBoard[i, j] != 0)
                     {
-                        outOfBound.Add(new int[] { j, i });
+                        outOfBound.Add(new int[] { i, j });
                     }
                 }
             }
@@ -171,15 +171,19 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
         private List<int[]> GetCoordListInWorkBoard(int[,] newBoard)
         {
             List<int[]> coords = new List<int[]>();
-            for (int i = BoundOfWorkBoard[0]; i <= BoundOfWorkBoard[2]; i++)
+            for (int i = BoundOfWorkBoard[1]; i <= BoundOfWorkBoard[3]; i++)
             {
-                for (int j = BoundOfWorkBoard[1]; j <= BoundOfWorkBoard[3]; j++)
+                for (int j = BoundOfWorkBoard[0]; j <= BoundOfWorkBoard[2]; j++)
                 {
                     // Если ячейка пуста, то добавляем ее в список
                     if (newBoard[i, j] == 0)
                     {
                         coords.Add(new int[] { i, j });
-                    }                    
+                    }
+                    else
+                    {
+                        int k = 0;
+                    }
                 }
             }
             return coords;
@@ -214,7 +218,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
         // вычисляет расстояние между двумя точками. Координаты точек - массив и отдельно X и Y
         private double DistancePointToPoint(int[] p1, int p2Coord_X, int p2Coord_Y)
         {
-            return Math.Sqrt(Math.Pow(p1[0] - p2Coord_X, 2) + Math.Pow(p1[1] - p2Coord_Y, 2));
+            return Math.Sqrt(Math.Pow(p1[1] - p2Coord_X, 2) + Math.Pow(p1[0] - p2Coord_Y, 2));
         }
 
         // наикротчайшее расстояние от точки до угла рабочей области 
@@ -237,14 +241,14 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
         private double? IsInAreaDistance(int[] cell)
         {
             // ячейка сверху или снизу рабочей области 
-            if (cell[0] > BoundOfWorkBoard[0] && cell[0] < BoundOfWorkBoard[2])
+            if (cell[1] > BoundOfWorkBoard[0] && cell[1] < BoundOfWorkBoard[2])
             {
-                return DistanceToLinePerpendicular(cell[1], BoundOfWorkBoard[1], BoundOfWorkBoard[3]);
+                return DistanceToLinePerpendicular(cell[0], BoundOfWorkBoard[1], BoundOfWorkBoard[3]);
             }
             // ячейка слева или справа от рабочей области
-            else if (cell[1] > BoundOfWorkBoard[1] && cell[1] < BoundOfWorkBoard[3])
+            else if (cell[0] > BoundOfWorkBoard[1] && cell[0] < BoundOfWorkBoard[3])
             {
-                return DistanceToLinePerpendicular(cell[0], BoundOfWorkBoard[0], BoundOfWorkBoard[2]);
+                return DistanceToLinePerpendicular(cell[1], BoundOfWorkBoard[0], BoundOfWorkBoard[2]);
             }
             return null;
         }
@@ -264,16 +268,16 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
             try
             {
                 // граница слева
-                GetMininimumCoordOutOfBound(0, 0);
+                GetMininimumCoordOutOfBound(1, 0);
 
                 // граница справа
-                GetMaximumCoordOutOfBound(0, 2);
+                GetMaximumCoordOutOfBound(1, 2);
 
                 // граница сверху
-                GetMininimumCoordOutOfBound(1, 1);
+                GetMininimumCoordOutOfBound(0, 1);
 
                 // граница снизу
-                GetMaximumCoordOutOfBound(1, 3);
+                GetMaximumCoordOutOfBound(0, 3);
             }
             catch (NullReferenceException)
             {
