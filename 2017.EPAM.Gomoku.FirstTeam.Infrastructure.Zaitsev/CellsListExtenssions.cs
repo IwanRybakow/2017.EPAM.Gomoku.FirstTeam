@@ -10,26 +10,45 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
     {
         public static int Min(this IEnumerable<int[]> list, int index)
         {
-            int currentMin = list.ElementAt(0)[index];
-            foreach(int[] item in list)
+            int minimum;
+            try
             {
-                if(item[index] < currentMin)
+                int currentMin = list.ElementAt(0)[index];
+                foreach (int[] item in list)
                 {
-                    currentMin = item[index];
+                    if (item[index] < currentMin)
+                    {
+                        currentMin = item[index];
+                    }
                 }
+                minimum = currentMin;
             }
-            return currentMin;
+            catch(ArgumentOutOfRangeException)
+            {
+                return -1;
+            }
+            return minimum;
+            
+
         }
 
         public static int Max(this IEnumerable<int[]> list, int index)
         {
-            int currentMax = list.ElementAt(0)[index];
-            foreach (int[] item in list)
+            int maximum;
+            try
             {
-                if (item[index] > currentMax)
+                int currentMax = list.ElementAt(0)[index];
+                foreach (int[] item in list)
                 {
-                    currentMax = item[index];
+                    if (item[index] > currentMax)
+                    {
+                        currentMax = item[index];
+                    }
                 }
+            }
+            catch(ArgumentOutOfRangeException)
+            {
+                return 1;
             }
             return currentMax;
         }

@@ -288,22 +288,23 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
         // Поиск минимальной координаты
         private void GetMininimumCoordOutOfBound(int cellIndex, int boundIndex)
         {
-            try
-            {
+            //try
+            //{
                 IEnumerable<int[]> coords = from cell in dangerousCells
                                             where cell[cellIndex] < BoundOfWorkBoard[boundIndex]
                                             select cell;
+                if(coords.Min)
                 
                 BoundOfWorkBoard[boundIndex] = coords.Min(cellIndex) - 1;                
                 if (BoundOfWorkBoard[boundIndex] < 0)
                 {
                     BoundOfWorkBoard[boundIndex] = 0;
                 }
-            }
-            catch (NullReferenceException)
-            {
-                throw;
-            }
+            //}
+            //catch (NullReferenceException)
+            //{
+            //    throw;
+            //}
 
         }
 

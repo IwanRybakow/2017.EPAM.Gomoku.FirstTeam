@@ -55,6 +55,10 @@
       <Project>{ad005279-56ea-4137-a60e-444ed571dfa5}</Project>
       <Name>2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta</Name>
     </ProjectReference>
+    <ProjectReference Include="..\2017.EPAM.Gomoku.FirstTeam.Rybakov\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov.csproj">
+      <Project>{587b7c1b-0494-4b4e-b245-82809f6ab8d0}</Project>
+      <Name>2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
