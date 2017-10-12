@@ -25,7 +25,7 @@ namespace TicTakToe
             }
             HybridDictionary dictionary = new HybridDictionary();
 
-            Parallel.ForEach(cellsToCheckList, element => dictionary.Add(element, algorithmMiniMax.EvaluateCell(playField, element.Key)));
+            Parallel.ForEach(cellsToCheckList, element => dictionary.Add(element.Key, algorithmMiniMax.EvaluateCell(playField, element.Key)));
 
             int[] coordinateNextStep = new int[2];
             int temp = 0;

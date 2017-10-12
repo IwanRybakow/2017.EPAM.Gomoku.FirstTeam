@@ -49,7 +49,10 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
             // если поле пустое, сразу занимаем ячеку вблизи середины поля
             if (firstCoord[0] != 0)
             {
-                return new CellCoordinates() { X = firstCoord[0], Y = firstCoord[1] };
+                byte[] temp = firstCoord;
+                firstCoord = new byte[2] { 0, 0 };
+                return new CellCoordinates() { X = temp[0], Y = temp[1] };
+                
             }
             // Вызов алгоритма в многопоточном режиме
             myMove = solver.GetOptimalStep(Board, workBoardCoords);
@@ -72,9 +75,9 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
             }
 
             // проходим по всему полю
-            for (int i = 0; i <= currentState.GetLength(0); i++)
+            for (int i = 0; i < currentState.GetLength(0); i++)
             {
-                for (int j = 0; j <= currentState.GetLength(0); j++)
+                for (int j = 0; j < currentState.GetLength(0); j++)
                 {
                     // ячейка поля отличается от ячейки локального поля
                     if ((int)currentState[i, j] != Board[i, j])
