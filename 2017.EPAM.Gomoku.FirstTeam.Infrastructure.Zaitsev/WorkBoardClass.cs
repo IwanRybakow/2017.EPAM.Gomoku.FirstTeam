@@ -293,7 +293,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
                 IEnumerable<int[]> coords = from cell in dangerousCells
                                             where cell[cellIndex] < BoundOfWorkBoard[boundIndex]
                                             select cell;
-                if(coords.Min)
+
                 
                 BoundOfWorkBoard[boundIndex] = coords.Min(cellIndex) - 1;                
                 if (BoundOfWorkBoard[boundIndex] < 0)

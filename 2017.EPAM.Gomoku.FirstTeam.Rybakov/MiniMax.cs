@@ -57,7 +57,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov
             return result - score;               
         }
 
-        public List<KeyValuePair<int[], int>> ReduceMoves (int[,] board, List<int[]> CellsToCheck)
+        public List<KeyValuePair<int[], int>> ReduceMoves (int[,] board, IEnumerable<int[]> CellsToCheck)
         {
             Dictionary<int[], int> iscores = new Dictionary<int[], int>();
             foreach (int[] cell in CellsToCheck)

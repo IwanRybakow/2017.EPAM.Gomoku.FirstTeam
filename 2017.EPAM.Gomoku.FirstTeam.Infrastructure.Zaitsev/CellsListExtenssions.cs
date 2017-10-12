@@ -34,10 +34,10 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
 
         public static int Max(this IEnumerable<int[]> list, int index)
         {
-            int maximum;
+            int currentMax;
             try
             {
-                int currentMax = list.ElementAt(0)[index];
+                currentMax = list.ElementAt(0)[index];
                 foreach (int[] item in list)
                 {
                     if (item[index] > currentMax)

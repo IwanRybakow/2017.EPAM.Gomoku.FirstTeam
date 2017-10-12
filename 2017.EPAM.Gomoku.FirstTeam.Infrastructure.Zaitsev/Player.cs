@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using EPAM.TicTacToe;
 using TicTakToe;
 using _2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov;
-{
+
 namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
 {
     [TeamName("First team")]
