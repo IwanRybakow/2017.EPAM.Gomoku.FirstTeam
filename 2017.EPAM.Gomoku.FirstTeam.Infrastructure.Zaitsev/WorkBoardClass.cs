@@ -21,27 +21,26 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
         const double MAX_DISTANCE = 2.82;   // максимальное расстояние от рабочей области (корень из 8-ми)
         List<int[]> coords;
         int size;   //размеры игрового поля
-        bool wokBoundNeed;
+        bool workBoundNeed;
         /// <summary>
         /// конструктор. Инициализирует границы рабочего поля
         /// </summary>
         /// <param name="size"> размер игрового поля </param>
         public WorkBoardClass(int size)
         {
-            // если размеры игрового поля малы, границы рабочего поля = игрового поля
+            // если размеры игрового поля малы, границы рабочего поля = границы игрового поля
             // сразу инициализируем список координат в игровом поле
             if (size < 7)
             {
-                wokBoundNeed = false;
+                workBoundNeed = false;
                 BoundOfWorkBoard = new int[4];
                 BoundOfWorkBoard[0] = 0;
                 BoundOfWorkBoard[1] = 0;
                 BoundOfWorkBoard[2] = size - 1;
-                BoundOfWorkBoard[3] = size - 1;
-                coords = GetCoordListInWorkBoard();
+                BoundOfWorkBoard[3] = size - 1;                
                 return;
             }
-            wokBoundNeed = true;
+            workBoundNeed = true;
             this.size = size;
             if (size % 2 == 0)
             {
@@ -61,8 +60,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
             BoundOfWorkBoard[0] = (size / 2) - initSize - param;
             BoundOfWorkBoard[1] = (size / 2) - initSize - param;
             BoundOfWorkBoard[2] = (size / 2) + initSize;
-            BoundOfWorkBoard[3] = (size / 2) + initSize;
-            coords = GetCoordListInWorkBoard();
+            BoundOfWorkBoard[3] = (size / 2) + initSize;            
         }
 
         /// <summary>
@@ -72,9 +70,9 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
         public List<int[]> SetWorkBoard(int[,] newBoard)
         {
             // если рабочее поле не требуется, возвращаем координаты
-            if (!wokBoundNeed)
+            if (!workBoundNeed)
             {
-                return coords;
+                return coords = GetCoordListInWorkBoard(newBoard);
             }
             try
             {
@@ -87,10 +85,13 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
             }
             catch (NullReferenceException)
             {
-                return coords;
+                // либо нет ячеек за пределами рабочего поля, либо не найдены опасные
             }
-            // Составляем список координат ячеек в рабочей области
-            coords = GetCoordListInWorkBoard();
+            finally
+            {
+                // Составляем список координат ячеек в рабочей области
+                coords = GetCoordListInWorkBoard(newBoard);
+            }            
             return coords;
 
         }
@@ -108,6 +109,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
             {
                 for (int j = 0; j < newBoard.GetLength(1); j++)
                 {
+                    // если ячейка за пределами рабочей области и занята, добавляем ее в список
                     if (!(i >= BoundOfWorkBoard[0] && j >= BoundOfWorkBoard[1] &&
                          i <= BoundOfWorkBoard[2] && j <= BoundOfWorkBoard[3]) &&
                        newBoard[i, j] != 0)
@@ -139,7 +141,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
                 {
                     distance = DistanceToCorner(cell);
                 }
-                // определяем бликолежащие (наиболее опасные вфтпукщ) и удаленные ячейки
+                // определяем бликолежащие (наиболее опасные) и удаленные ячейки
                 if (distance <= MAX_DISTANCE)
                 {
                     dangerousCells.Add(cell);
@@ -162,18 +164,22 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
         }
 
         /// <summary>
-        /// Создает список координат в рабочей области
+        /// Создает список координат свободных ячеек в рабочей области
         /// </summary>
         /// 
         /// <returns></returns>
-        private List<int[]> GetCoordListInWorkBoard()
+        private List<int[]> GetCoordListInWorkBoard(int[,] newBoard)
         {
             List<int[]> coords = new List<int[]>();
             for (int i = BoundOfWorkBoard[0]; i <= BoundOfWorkBoard[2]; i++)
             {
                 for (int j = BoundOfWorkBoard[1]; j <= BoundOfWorkBoard[3]; j++)
                 {
-                    coords.Add(new int[] { i, j });
+                    // Если ячейка пуста, то добавляем ее в список
+                    if (newBoard[i, j] == 0)
+                    {
+                        coords.Add(new int[] { i, j });
+                    }                    
                 }
             }
             return coords;
@@ -188,7 +194,8 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
             {
                 foreach (int[] anotherCell in anotherCellList)
                 {
-                    distance = DistancePointToPoint(cell, anotherCell);
+                    // Вычисляем расстоние
+                    distance = DistancePointToPoint(cell, anotherCell);                    
                     if (cell != anotherCell && distance <= MAX_DISTANCE && !result.Contains(cell))
                     {
                         result.Add(cell);
@@ -282,10 +289,8 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
                 IEnumerable<int[]> coords = from cell in dangerousCells
                                             where cell[cellIndex] < BoundOfWorkBoard[boundIndex]
                                             select cell;
-                //int min = coords.Min(cellIndex);
-                //min = min - 1; 
-                BoundOfWorkBoard[boundIndex] = coords.Min(cellIndex) - 1;
-                //BoundOfWorkBoard[boundIndex] -= min;
+                
+                BoundOfWorkBoard[boundIndex] = coords.Min(cellIndex) - 1;                
                 if (BoundOfWorkBoard[boundIndex] < 0)
                 {
                     BoundOfWorkBoard[boundIndex] = 0;

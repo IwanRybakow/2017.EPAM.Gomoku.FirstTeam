@@ -111,7 +111,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
                     }
                 }
             }
-            // если поле пустое и я хожу первым занимаем ячеку где-то в центре поля
+            // если поле пустое и я хожу первым, занимаем ячеку где-то в центре поля
             if (iMoveFirst && firtStep)
             {
                 firstCoord[0] = (byte)(Board.GetLength(0) / 2);
