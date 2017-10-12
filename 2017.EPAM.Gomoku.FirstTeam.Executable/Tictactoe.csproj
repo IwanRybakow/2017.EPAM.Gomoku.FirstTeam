@@ -57,7 +57,7 @@
       <Project>{aba3e76c-1120-4414-a652-46e95c84da53}</Project>
       <Name>HumanPlayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\2017.EPAM.Gomoku.FirstTeam.Zaicev\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev.csproj">
+    <ProjectReference Include="..\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev.csproj">
       <Project>{3edda2bf-0c7a-492e-8aeb-9b87686d8751}</Project>
       <Name>2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev</Name>
     </ProjectReference>

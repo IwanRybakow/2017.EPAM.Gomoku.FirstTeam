@@ -15,8 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2017.EPAM.Gomoku.FirstTeam.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev", "2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev.csproj", "{3EDDA2BF-0C7A-492E-8AEB-9B87686D8751}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2017.EPAM.Gomoku.FirstTeam.TestInfranstructure", "2017.EPAM.Gomoku.FirstTeam.TestInfranstructure\2017.EPAM.Gomoku.FirstTeam.TestInfranstructure.csproj", "{FD62665B-03AD-436B-B4DC-6C1136F4FA65}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,10 +45,6 @@ Global
 		{3EDDA2BF-0C7A-492E-8AEB-9B87686D8751}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EDDA2BF-0C7A-492E-8AEB-9B87686D8751}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EDDA2BF-0C7A-492E-8AEB-9B87686D8751}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FD62665B-03AD-436B-B4DC-6C1136F4FA65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FD62665B-03AD-436B-B4DC-6C1136F4FA65}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FD62665B-03AD-436B-B4DC-6C1136F4FA65}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FD62665B-03AD-436B-B4DC-6C1136F4FA65}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
