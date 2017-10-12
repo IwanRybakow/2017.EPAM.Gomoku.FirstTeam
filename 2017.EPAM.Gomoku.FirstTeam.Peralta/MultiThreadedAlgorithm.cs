@@ -16,7 +16,7 @@ namespace TicTakToe
         {
             algorithmMiniMax = new MiniMax(signInRowToWin);
         }
-        public int[] GetOptimalStep(int[,] playField, List<int[]> CellsToCheck)
+        public int[] GetOptimalStep(int[,] playField, IEnumerable<int[]> CellsToCheck)
         {
             List<KeyValuePair<int[], int>> cellsToCheckList = algorithmMiniMax.ReduceMoves(playField, CellsToCheck);
             if (cellsToCheckList.Count == 1 )
