@@ -12,7 +12,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov
 
         public static HashSet<int[]> FindMoves (int[,] board)
         {
-            int searchRange = 2;
+            int searchRange = 3;
             int bLength = board.GetLength(0);
             HashSet<int[]> pointsList = new HashSet<int[]>();
 
