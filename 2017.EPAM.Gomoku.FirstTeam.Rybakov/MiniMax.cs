@@ -19,7 +19,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov
             opponentPatterns = new PatternCollection(qtyCellsForWin, 2);
         }
 
-        public int EvaluateCell (int[,] board, int[] move, int sign = 1, int depth = 2)
+        public int EvaluateCell (int[,] board, int[] move, int sign = 1, int depth = 6)
         {
             int result = Evaluate(board, move, sign);
 
