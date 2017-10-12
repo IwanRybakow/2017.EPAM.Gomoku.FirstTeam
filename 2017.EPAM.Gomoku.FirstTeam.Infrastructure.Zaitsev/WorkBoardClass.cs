@@ -300,9 +300,9 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
                     BoundOfWorkBoard[boundIndex] = 0;
                 }
             }
-            catch (NullReferenceException)
+            catch (ArgumentOutOfRangeException)
             {
-                throw;
+                // минимум не найден оставляем границы прежними
             }
 
         }
@@ -321,9 +321,9 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
                     BoundOfWorkBoard[boundIndex] = size - 1;
                 }
             }
-            catch (NullReferenceException)
+            catch (ArgumentOutOfRangeException)
             {
-                throw;
+                // максимум не найден оставляем границы прежними
             }
         }
 
