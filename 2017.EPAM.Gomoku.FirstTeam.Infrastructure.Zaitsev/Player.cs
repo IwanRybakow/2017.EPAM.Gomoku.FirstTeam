@@ -58,7 +58,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
             myMove = solver.GetOptimalStep(Board, workBoardCoords);
 
             // создаем CellCoordinates и возвращаем наш ход
-            return new CellCoordinates() { X = (byte)myMove[0], Y = (byte)myMove[1] };
+            return new CellCoordinates() { X = (byte)myMove[1], Y = (byte)myMove[0] };
         }
 
         /// <summary>

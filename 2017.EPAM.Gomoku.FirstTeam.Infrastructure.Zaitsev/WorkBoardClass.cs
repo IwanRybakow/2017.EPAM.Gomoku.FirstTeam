@@ -114,7 +114,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
                          i <= BoundOfWorkBoard[2] && j <= BoundOfWorkBoard[3]) &&
                        newBoard[i, j] != 0)
                     {
-                        outOfBound.Add(new int[] { i, j });
+                        outOfBound.Add(new int[] { j, i });
                     }
                 }
             }
