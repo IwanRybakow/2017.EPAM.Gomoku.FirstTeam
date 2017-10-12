@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using EPAM.TicTacToe;
 using TicTakToe;
-
+using _2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov;
+{
 namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
 {
     [TeamName("First team")]
@@ -38,13 +39,13 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
             CreateLocalBoard(CurrentState, qtyCellsForWin);
 
             int[] myMove = { 0, 0 };
-            if (WorkBoard == null)
-            {
-                WorkBoard = new WorkBoardClass(Board.GetLength(0));
-            }
-
+            //if (WorkBoard == null)
+            //{
+            //    WorkBoard = new WorkBoardClass(Board.GetLength(0));
+            //}
+            
             // список координат рабочего поля
-            List<int[]> workBoardCoords = WorkBoard.SetWorkBoard(Board);
+            //List<int[]> workBoardCoords = WorkBoard.SetWorkBoard(Board);
 
             // если поле пустое, сразу занимаем ячеку вблизи середины поля
             if (firstCoord[0] != 0)
@@ -55,10 +56,11 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
                 
             }
             // Вызов алгоритма в многопоточном режиме
-            myMove = solver.GetOptimalStep(Board, workBoardCoords);
+            //myMove = solver.GetOptimalStep(Board, workBoardCoords);
+            myMove = solver.GetOptimalStep(Board, Utils.FindMoves(Board));
 
             // создаем CellCoordinates и возвращаем наш ход
-            return new CellCoordinates() { X = (byte)myMove[1], Y = (byte)myMove[0] };
+            return new CellCoordinates() { X = (byte)myMove[0], Y = (byte)myMove[1] };
         }
 
         /// <summary>
