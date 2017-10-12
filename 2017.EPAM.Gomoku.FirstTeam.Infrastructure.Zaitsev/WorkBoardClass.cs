@@ -19,6 +19,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
         int[] BoundOfWorkBoard { get; set; }
         List<int[]> dangerousCells; // опасные ячейки
         const double MAX_DISTANCE = 2.82;   // максимальное расстояние от рабочей области (корень из 8-ми)
+        private const int MIN_QUANTITY_EMPTY_CELLS = 4;
         int size;   //размеры игрового поля
         bool workBoundNeed;
         /// <summary>
@@ -91,9 +92,38 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
             {
                 // Составляем список координат ячеек в рабочей области
                 coords = GetCoordListInWorkBoard(newBoard);
-            }            
+            }
+            // если свободных ячеек маало расширяем границы рабочей области
+            if (coords.Count <= MIN_QUANTITY_EMPTY_CELLS)
+            {
+                coords = ExpandBoundsOfWorkBoard(newBoard);
+            }
             return coords;
+            
 
+        }
+
+        // расширяет границы рабочей области
+        private List<int[]> ExpandBoundsOfWorkBoard(int[,] newBoard)
+        {
+            // я переделаю
+            if(BoundOfWorkBoard[0] !=0 )
+            {
+                BoundOfWorkBoard[0]--;
+            }
+            if(BoundOfWorkBoard[1] != 0)
+            {
+                BoundOfWorkBoard[1]--;
+            }
+            if(BoundOfWorkBoard[2] != size - 1)
+            {
+                BoundOfWorkBoard[2]++;
+            }
+            if (BoundOfWorkBoard[3] != size - 1)
+            {
+                BoundOfWorkBoard[3]++;
+            }
+            return GetCoordListInWorkBoard(newBoard);
         }
 
         /// <summary>
@@ -265,24 +295,18 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
         // новые границы 
         private void NewBoundsOfWorkBoard()
         {
-            try
-            {
-                // граница слева
-                GetMininimumCoordOutOfBound(1, 0);
+            // граница слева
+            GetMininimumCoordOutOfBound(1, 0);
 
-                // граница справа
-                GetMaximumCoordOutOfBound(1, 2);
+            // граница справа
+            GetMaximumCoordOutOfBound(1, 2);
 
-                // граница сверху
-                GetMininimumCoordOutOfBound(0, 1);
+            // граница сверху
+            GetMininimumCoordOutOfBound(0, 1);
 
-                // граница снизу
-                GetMaximumCoordOutOfBound(0, 3);
-            }
-            catch (NullReferenceException)
-            {
-                throw;
-            }
+            // граница снизу
+            GetMaximumCoordOutOfBound(0, 3);
+           
         }
 
         // Поиск минимальной координаты
