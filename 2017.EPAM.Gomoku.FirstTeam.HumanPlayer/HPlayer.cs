@@ -14,8 +14,8 @@ namespace HumanPlayer
         {
             Console.WriteLine("Please enter coordinates of your next move according to followin pattern: number_of_row number_of_column (for example: 1 1) ");  
             bool ok;
-            byte r = 0;
-            byte c = 0;
+            int r = 0;
+            int c = 0;
             do
             {
                 string move = Console.ReadLine();
@@ -24,8 +24,8 @@ namespace HumanPlayer
                 {
                     string[] coordinates = move.Split(' ');
 
-                    r = Convert.ToByte(coordinates[0]);
-                    c = Convert.ToByte(coordinates[1]);
+                    r = Convert.ToInt32(coordinates[0]) - 1;
+                    c = Convert.ToInt32(coordinates[1]) - 1; ;
                 }
                 catch (Exception)
                 {
@@ -35,7 +35,7 @@ namespace HumanPlayer
             } while (ok);
 
 
-            return new CellCoordinates() { X = r, Y = c }; ;
+            return new CellCoordinates() { X = (byte)r, Y = (byte)c }; ;
         }
     }
 }
