@@ -10,11 +10,11 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov
     {
         /*search for possible moves near cells which are already taken*/
 
-        public static HashSet<int[]> FindMoves (int[,] board)
+        public static HashSet<Tuple<int, int>> FindMoves (int[,] board)
         {
             int searchRange = 3;
             int bLength = board.GetLength(0);
-            HashSet<int[]> pointsList = new HashSet<int[]>();
+            HashSet<Tuple<int, int>> pointsList = new HashSet<Tuple<int, int>>();
 
             for (int i = 0; i < bLength; i++)
             {
@@ -32,7 +32,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov
                         {
                             if (board[k,l] == 0)
                             {
-                                pointsList.Add(new int[] { k, l });
+                                pointsList.Add(new Tuple<int, int>(item1:k, item2:l));
                             }
                         }
                     }

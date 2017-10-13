@@ -37,7 +37,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
                 BoundOfWorkBoard[0] = 0;
                 BoundOfWorkBoard[1] = 0;
                 BoundOfWorkBoard[2] = size - 1;
-                BoundOfWorkBoard[3] = size - 1;                
+                BoundOfWorkBoard[3] = size - 1;
                 return;
             }
             workBoundNeed = true;
@@ -60,7 +60,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
             BoundOfWorkBoard[0] = (size / 2) - initSize - param;
             BoundOfWorkBoard[1] = (size / 2) - initSize - param;
             BoundOfWorkBoard[2] = (size / 2) + initSize;
-            BoundOfWorkBoard[3] = (size / 2) + initSize;            
+            BoundOfWorkBoard[3] = (size / 2) + initSize;
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
                 coords = ExpandBoundsOfWorkBoard(newBoard);
             }
             return coords;
-            
+
 
         }
 
@@ -107,15 +107,15 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
         private List<int[]> ExpandBoundsOfWorkBoard(int[,] newBoard)
         {
             // я переделаю
-            if(BoundOfWorkBoard[0] !=0 )
+            if (BoundOfWorkBoard[0] != 0)
             {
                 BoundOfWorkBoard[0]--;
             }
-            if(BoundOfWorkBoard[1] != 0)
+            if (BoundOfWorkBoard[1] != 0)
             {
                 BoundOfWorkBoard[1]--;
             }
-            if(BoundOfWorkBoard[2] != size - 1)
+            if (BoundOfWorkBoard[2] != size - 1)
             {
                 BoundOfWorkBoard[2]++;
             }
@@ -229,7 +229,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
                 foreach (int[] anotherCell in anotherCellList)
                 {
                     // Вычисляем расстоние
-                    distance = DistancePointToPoint(cell, anotherCell);                    
+                    distance = DistancePointToPoint(cell, anotherCell);
                     if (cell != anotherCell && distance <= MAX_DISTANCE && !result.Contains(cell))
                     {
                         result.Add(cell);
@@ -306,32 +306,28 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
 
             // граница снизу
             GetMaximumCoordOutOfBound(0, 3);
-           
+
         }
 
         // Поиск минимальной координаты
         private void GetMininimumCoordOutOfBound(int cellIndex, int boundIndex)
         {
-            //try
-            //{
+            try
+            {
                 IEnumerable<int[]> coords = from cell in dangerousCells
                                             where cell[cellIndex] < BoundOfWorkBoard[boundIndex]
                                             select cell;
 
-                
-                BoundOfWorkBoard[boundIndex] = coords.Min(cellIndex) - 1;                
+                BoundOfWorkBoard[boundIndex] = coords.Min(cellIndex) - 1;
                 if (BoundOfWorkBoard[boundIndex] < 0)
                 {
                     BoundOfWorkBoard[boundIndex] = 0;
                 }
-
             }
             catch (ArgumentOutOfRangeException)
             {
                 // минимум не найден оставляем границы прежними
             }
-
-
 
         }
 

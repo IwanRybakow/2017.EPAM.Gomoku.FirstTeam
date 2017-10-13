@@ -18,24 +18,31 @@ namespace TicTakToe
         }
         public int[] GetOptimalStep(int[,] playField, IEnumerable<int[]> CellsToCheck)
         {
-            List<KeyValuePair<int[], int>> cellsToCheckList = algorithmMiniMax.ReduceMoves(playField, CellsToCheck);
-            if (cellsToCheckList.Count == 1 )
+            HashSet<Tuple<int, int>> NearCellsList = Utils.FindMoves(playField);
+            foreach (int[] item in CellsToCheck)
             {
-                return cellsToCheckList[0].Key;
+                NearCellsList.Add(new Tuple<int, int>(item[0], item[1]));
+            }
+            List<KeyValuePair<Tuple<int, int>, int>> cellsToCheckList = algorithmMiniMax.ReduceMoves(playField, NearCellsList);
+            if (cellsToCheckList.Count == 1)
+            {
+                Tuple<int, int> res = cellsToCheckList[0].Key;
+                return new int[]{ res.Item1, res.Item2 };
             }
             HybridDictionary dictionary = new HybridDictionary();
 
-            Parallel.ForEach(cellsToCheckList, element => dictionary.Add(element.Key, algorithmMiniMax.EvaluateCell(playField, element.Key)));
+            Parallel.ForEach(cellsToCheckList, element => dictionary.Add(element.Key, algorithmMiniMax.EvaluateCell((int[,])playField.Clone(), element.Key)));
 
-            int[] coordinateNextStep = new int[2];
-            int temp = 0;
+            int[] coordinateNextStep = new int[2] { cellsToCheckList[0].Key.Item1, cellsToCheckList[0].Key.Item2 };
+            int temp = int.MinValue;
 
             foreach (DictionaryEntry d in dictionary)
             {
                 if (Convert.ToInt32(d.Value) > temp)
                 {
                     temp = Convert.ToInt32(d.Value);
-                    coordinateNextStep = (int[])d.Key;
+                    Tuple<int, int> res = (Tuple<int, int>)d.Key;
+                    coordinateNextStep = new int[] { res.Item1, res.Item2 };
                 }
             }
             return coordinateNextStep;
