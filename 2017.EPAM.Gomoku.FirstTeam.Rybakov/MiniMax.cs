@@ -54,7 +54,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov
                     score = temp;
                 }
             }
-            return result - score;               
+            return result - score/2;               
         }
 
         public List<KeyValuePair<Tuple<int, int>, int>> ReduceMoves (int[,] board, IEnumerable<Tuple<int, int>> CellsToCheck)
