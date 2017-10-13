@@ -12,7 +12,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov
 
         public static HashSet<Tuple<int, int>> FindMoves (int[,] board)
         {
-            int searchRange = 3;
+            int searchRange = 2;
             int bLength = board.GetLength(0);
             HashSet<Tuple<int, int>> pointsList = new HashSet<Tuple<int, int>>();
 
@@ -41,8 +41,18 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov
             return pointsList;
         }
 
-        /*search for strings near move,
-         used for move estimation*/
+        /* 
+         *  search for strings near move(in center),
+         *        x    x    x
+         *          x  x  x
+         *           x x x
+         *       x x x x x x x
+         *           x x x
+         *          x  x  x
+         *        x    x    x
+         *  creates 4 strins: horizontal, vertical, 2 diagonals
+         *  then algorithm looks for patterns in this strings 
+         */
 
         public static List<string> FindStrings(int[,] board, int[] move, int signsInRowToWin)
         {

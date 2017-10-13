@@ -19,12 +19,12 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov
             opponentPatterns = new PatternCollection(qtyCellsForWin, 2);
         }
 
-        public int EvaluateCell (int[,] board, Tuple<int, int> move, int sign = 1, int depth = 4)
+        public int EvaluateCell (int[,] board, Tuple<int, int> move, int sign = 1, int depth = 6)
         {
             int result = Evaluate(board, move, sign);
 
             // base case
-            if (result >= 20000000 || depth == 0)
+            if (result >= 2000000 || depth == 0)
             {
                 return result;
             }
@@ -43,7 +43,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov
                 scores[cell] = s;
             }
             var items = from i in scores orderby i.Value descending select i.Key;
-            List<Tuple<int, int>> cellsToCheckList = items.Take(5).ToList();
+            List<Tuple<int, int>> cellsToCheckList = items.Take(2).ToList();
 
             int score = int.MinValue;
             foreach (Tuple<int, int> item in cellsToCheckList)
@@ -54,7 +54,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov
                     score = temp;
                 }
             }
-            return result - score/2;               
+            return result - score;               
         }
 
         public List<KeyValuePair<Tuple<int, int>, int>> ReduceMoves (int[,] board, IEnumerable<Tuple<int, int>> CellsToCheck)
