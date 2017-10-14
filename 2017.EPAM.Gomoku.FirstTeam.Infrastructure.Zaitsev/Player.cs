@@ -14,7 +14,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
     public class Player : IPlayer
     {
         WorkBoardClass WorkBoard { get; set; }  // Объект для определения рабочего поля 
-        private Multithreading solver;          //
+        private Multithreading solver;          // Объект для вызова алгоритма в многопоточном режиме
         private Form1 GUI;                      // GUI для игры с человеком
         public int[,] Board { get; private set; } // локальное игровое поле ,предается на обратку алгоритму
         byte[] firstCoord;                      // координата первого хода, если я хожу первым
@@ -45,6 +45,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
                 }
                 // передаем GUI 
                 GUI.GetBoard(Board);
+                // ожидаем хода человека
                 while (GUI.HumanMove == null) ;
                 return new CellCoordinates() { X = (byte)GUI.HumanMove[0], Y = (byte)GUI.HumanMove[1] };
 
