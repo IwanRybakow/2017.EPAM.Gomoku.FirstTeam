@@ -41,7 +41,8 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
                 // создаем GUI
                 if (GUI == null)
                 {
-                    GUI = new Form1(Board.GetLength(0), playerID);
+                    GUI = new Form1();
+                    GUI.SetGUI(Board.GetLength(0), playerID);
                 }
                 // передаем GUI 
                 GUI.GetBoard(Board);

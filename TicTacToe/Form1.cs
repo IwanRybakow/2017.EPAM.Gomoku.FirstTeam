@@ -25,14 +25,20 @@ namespace TicTacToe
         List<int[]> listCoordinates = new List<int[]>(); //хранятся координаты пустых ячеек
         int[,] playField; //двумерный массив (матрица), в котором хранится игровое поле
 
-        public Form1(int sizeBoard, int figureID)
+        public Form1()
         {
-            InitializeComponent();
+            InitializeComponent();            
+        }
+
+        // установка GUI
+        public void SetGUI(int sizeBoard, int figureID)
+        {
             CreatePlayField(sizeBoard);
             CreateSquares();
             CheckFigure();
             figure = figureID;
         }
+
         private void CheckFigure()
         {
             if(figure == 1)
@@ -57,6 +63,8 @@ namespace TicTacToe
             buttonX.BackColor = Color.LightGray;
             figure = 2; // 0 (нолик)
         }
+
+       
 
         private void playGround_Paint(object sender, PaintEventArgs e)
         {
