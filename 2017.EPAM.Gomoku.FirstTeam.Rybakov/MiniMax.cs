@@ -19,12 +19,12 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov
             opponentPatterns = new PatternCollection(qtyCellsForWin, 2);
         }
 
-        public int EvaluateCell (int[,] board, int[] move, int sign = 1, int depth = 2)
+        public int EvaluateCell (int[,] board, Tuple<int, int> move, int sign = 1, int depth = 6)
         {
             int result = Evaluate(board, move, sign);
 
             // base case
-            if (result >= 20000000 || depth == 0)
+            if (result >= 2000000 || depth == 0)
             {
                 return result;
             }
@@ -32,21 +32,21 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov
             int oppSign = sign == 1 ? 2 : 1;
             depth--;
             int[,] newBoard = (int[,])board.Clone();
-            newBoard[move[0], move[1]] = sign;
-            HashSet<int[]> cells = Utils.FindMoves(newBoard);
-            Dictionary<int[], int> scores = new Dictionary<int[], int>();
-            foreach (int[] cell in cells)
+            newBoard[move.Item1, move.Item2] = sign;
+            HashSet<Tuple<int, int>> cells = Utils.FindMoves(newBoard);
+            Dictionary<Tuple<int, int>, int> scores = new Dictionary<Tuple<int, int>, int>();
+            foreach (Tuple<int, int> cell in cells)
             {
                 int[,] b = (int[,])newBoard.Clone();
-                b[cell[0], cell[1]] = oppSign;
+                b[cell.Item1, cell.Item2] = oppSign;
                 int s = Evaluate(b, cell, oppSign);
                 scores[cell] = s;
             }
             var items = from i in scores orderby i.Value descending select i.Key;
-            List<int[]> cellsToCheckList = items.Take(2).ToList();
+            List<Tuple<int, int>> cellsToCheckList = items.Take(2).ToList();
 
             int score = int.MinValue;
-            foreach (int[] item in cellsToCheckList)
+            foreach (Tuple<int, int> item in cellsToCheckList)
             {
                 int temp = EvaluateCell(newBoard, item, oppSign, depth);
                 if (temp > score)
@@ -57,18 +57,18 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov
             return result - score;               
         }
 
-        public List<KeyValuePair<int[], int>> ReduceMoves (int[,] board, List<int[]> CellsToCheck)
+        public List<KeyValuePair<Tuple<int, int>, int>> ReduceMoves (int[,] board, IEnumerable<Tuple<int, int>> CellsToCheck)
         {
-            Dictionary<int[], int> iscores = new Dictionary<int[], int>();
-            foreach (int[] cell in CellsToCheck)
+            Dictionary<Tuple<int, int>, int> iscores = new Dictionary<Tuple<int, int>, int>();
+            foreach (Tuple<int, int> cell in CellsToCheck)
             {
                 int[,] newBoard = (int[,])board.Clone();
-                newBoard[cell[0], cell[1]] = 1;
+                newBoard[cell.Item1, cell.Item2] = 1;
                 int estimation = Evaluate(newBoard, cell, 1);
                 iscores[cell] = estimation;
             }
             var items = from i in iscores orderby i.Value descending select i;
-            List<KeyValuePair<int[], int>> cellsToCheckList = items.Take(10).ToList();
+            List<KeyValuePair<Tuple<int, int>, int>> cellsToCheckList = items.Take(10).ToList();
             if (cellsToCheckList[0].Value > 430000)
             {
                 return cellsToCheckList.Take(1).ToList();
@@ -76,15 +76,15 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov
             return cellsToCheckList;
         }
 
-        int Evaluate(int[,] board, int[] move, int sign)
+        int Evaluate(int[,] board, Tuple<int, int> move, int sign)
         {
             int oppSign = sign == 1 ? 2 : 1;
             int result = 0;
-            board[move[0], move[1]] = sign;
-            List<string> StringsToCheck = Utils.FindStrings(board, move, qtyCellsForWin);
-            board[move[0], move[1]] = oppSign;
-            StringsToCheck.AddRange(Utils.FindStrings(board, move, qtyCellsForWin));
-            board[move[0], move[1]] = 0;
+            board[move.Item1, move.Item2] = sign;
+            List<string> StringsToCheck = Utils.FindStrings(board, new int[] { move.Item1, move.Item2 }, qtyCellsForWin);
+            board[move.Item1, move.Item2] = oppSign;
+            StringsToCheck.AddRange(Utils.FindStrings(board, new int[] { move.Item1, move.Item2 }, qtyCellsForWin));
+            board[move.Item1, move.Item2] = 0;
             PatternCollection patterns = sign == 1 ? ownPatterns : opponentPatterns;
             foreach (string item in StringsToCheck)
             {

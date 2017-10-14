@@ -15,38 +15,38 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov
             PatternList = new List<Pattern>();
 
             // XXXXX
-            Pattern victory = new Pattern(1700000000);
+            Pattern victory = new Pattern(170000000);
             victory.PatternStringBuilder.Append(ownSign.ToString()[0], signsInRowToWin);
             PatternList.Add(victory);
 
             // XXXXX
-            Pattern oppVictory = new Pattern(1600000000);
+            Pattern oppVictory = new Pattern(160000000);
             oppVictory.PatternStringBuilder.Append(OppSign.ToString()[0], signsInRowToWin);
             PatternList.Add(oppVictory);
 
             // 0XXXX0
-            Pattern oneAwayDouble = new Pattern(100000000);
+            Pattern oneAwayDouble = new Pattern(10000000);
             oneAwayDouble.PatternStringBuilder.Append('0');
             oneAwayDouble.PatternStringBuilder.Append(ownSign.ToString()[0], signsInRowToWin-1);
             oneAwayDouble.PatternStringBuilder.Append('0');
             PatternList.Add(oneAwayDouble);
 
             // 0XXXX0
-            Pattern oppOneAwayDouble = new Pattern(20000000);
+            Pattern oppOneAwayDouble = new Pattern(2000000);
             oppOneAwayDouble.PatternStringBuilder.Append('0');
             oppOneAwayDouble.PatternStringBuilder.Append(OppSign.ToString()[0], signsInRowToWin - 1);
             oppOneAwayDouble.PatternStringBuilder.Append('0');
             PatternList.Add(oppOneAwayDouble);
 
             // 0XXX0
-            Pattern twoAwayDouble = new Pattern(2400000);
+            Pattern twoAwayDouble = new Pattern(240000);
             twoAwayDouble.PatternStringBuilder.Append('0');
             twoAwayDouble.PatternStringBuilder.Append(ownSign.ToString()[0], signsInRowToWin - 2);
             twoAwayDouble.PatternStringBuilder.Append('0');
             PatternList.Add(twoAwayDouble);
 
             // 0XXX0
-            Pattern oppTwoAwayDouble = new Pattern(2200000);
+            Pattern oppTwoAwayDouble = new Pattern(220000);
             oppTwoAwayDouble.PatternStringBuilder.Append('0');
             oppTwoAwayDouble.PatternStringBuilder.Append(OppSign.ToString()[0], signsInRowToWin - 2);
             oppTwoAwayDouble.PatternStringBuilder.Append('0');
@@ -55,8 +55,8 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov
             // 0XXXX, XXXX0, X0XXX..etc
             for (int i = 0; i < signsInRowToWin; i++)
             {
-                Pattern oneAway = new Pattern(4000000);
-                Pattern oppOneAway = new Pattern(3500000);
+                Pattern oneAway = new Pattern(400000);
+                Pattern oppOneAway = new Pattern(350000);
                 for (int j = 0; j < signsInRowToWin; j++)
                 {
                     char c = i == j ? '0' : ownSign.ToString()[0];
@@ -71,8 +71,8 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov
             // 00XXX, XXX00, X00XX..etc
             for (int i = 0; i < signsInRowToWin-1; i++)
             {
-                Pattern oneAway = new Pattern(1500000);
-                Pattern oppOneAway = new Pattern(1300000);
+                Pattern oneAway = new Pattern(150000);
+                Pattern oppOneAway = new Pattern(130000);
                 for (int j = 0; j < signsInRowToWin-1; j++)
                 {
                     string c = i == j ? "00" : ownSign.ToString();
@@ -88,7 +88,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov
             if (signsInRowToWin>3)
             {
                 // 00XX0
-                Pattern threeAwayTwoLeftOneRight = new Pattern(40000);
+                Pattern threeAwayTwoLeftOneRight = new Pattern(4000);
                 threeAwayTwoLeftOneRight.PatternStringBuilder.Append('0');
                 threeAwayTwoLeftOneRight.PatternStringBuilder.Append('0');
                 threeAwayTwoLeftOneRight.PatternStringBuilder.Append(ownSign.ToString()[0], signsInRowToWin - 3);
@@ -96,7 +96,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov
                 PatternList.Add(threeAwayTwoLeftOneRight);
 
                 // 00XX0
-                Pattern oppTthreeAwayTwoLeftOneRight = new Pattern(30000);
+                Pattern oppTthreeAwayTwoLeftOneRight = new Pattern(3000);
                 oppTthreeAwayTwoLeftOneRight.PatternStringBuilder.Append('0');
                 oppTthreeAwayTwoLeftOneRight.PatternStringBuilder.Append('0');
                 oppTthreeAwayTwoLeftOneRight.PatternStringBuilder.Append(OppSign.ToString()[0], signsInRowToWin - 2);
@@ -104,7 +104,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov
                 PatternList.Add(oppTthreeAwayTwoLeftOneRight);
 
                 // 00XX0
-                Pattern threeAwayTwoRightOneLeft = new Pattern(40000);
+                Pattern threeAwayTwoRightOneLeft = new Pattern(4000);
                 threeAwayTwoRightOneLeft.PatternStringBuilder.Append('0');
                 threeAwayTwoRightOneLeft.PatternStringBuilder.Append(ownSign.ToString()[0], signsInRowToWin - 3);
                 threeAwayTwoRightOneLeft.PatternStringBuilder.Append('0');
@@ -112,7 +112,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov
                 PatternList.Add(threeAwayTwoRightOneLeft);
 
                 // 00XX0
-                Pattern oppThreeAwayTwoRightOneLeft = new Pattern(30000);
+                Pattern oppThreeAwayTwoRightOneLeft = new Pattern(3000);
                 oppThreeAwayTwoRightOneLeft.PatternStringBuilder.Append('0');
                 oppThreeAwayTwoRightOneLeft.PatternStringBuilder.Append(OppSign.ToString()[0], signsInRowToWin - 3);
                 oppThreeAwayTwoRightOneLeft.PatternStringBuilder.Append('0');
