@@ -80,7 +80,7 @@
             // playGround
             // 
             this.playGround.BackColor = System.Drawing.Color.White;
-            this.playGround.Location = new System.Drawing.Point(6, 4);
+            this.playGround.Location = new System.Drawing.Point(3, 3);
             this.playGround.Name = "playGround";
             this.playGround.Size = new System.Drawing.Size(1443, 1630);
             this.playGround.TabIndex = 7;
@@ -101,7 +101,7 @@
             // 
             // buttonX
             // 
-            this.buttonX.BackColor = System.Drawing.Color.LightGray;
+            this.buttonX.BackColor = System.Drawing.Color.Transparent;
             this.buttonX.Image = ((System.Drawing.Image)(resources.GetObject("buttonX.Image")));
             this.buttonX.Location = new System.Drawing.Point(12, 146);
             this.buttonX.Name = "buttonX";
@@ -134,6 +134,8 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Крестики-нолики";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playGround)).EndInit();

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta", "2017.EPAM.Gomoku.FirstTeam.Peralta\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta.csproj", "{AD005279-56EA-4137-A60E-444ED571DFA5}"
 EndProject
@@ -9,9 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2017.EPAM.Gomoku.FirstTeam.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev", "2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev.csproj", "{3EDDA2BF-0C7A-492E-8AEB-9B87686D8751}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "TicTacToe\GUI.csproj", "{308A20AB-478A-4D4C-A27F-AC1946CD7144}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestHost", "TestHost\TestHost.csproj", "{946220A6-A01F-41B9-802E-05E0836468DC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2017.EPAM.Gomoku.FirstTeam.GUI.Peralta", "TicTacToe\2017.EPAM.Gomoku.FirstTeam.GUI.Peralta.csproj", "{308A20AB-478A-4D4C-A27F-AC1946CD7144}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +33,6 @@ Global
 		{308A20AB-478A-4D4C-A27F-AC1946CD7144}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{308A20AB-478A-4D4C-A27F-AC1946CD7144}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{308A20AB-478A-4D4C-A27F-AC1946CD7144}.Release|Any CPU.Build.0 = Release|Any CPU
-		{946220A6-A01F-41B9-802E-05E0836468DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{946220A6-A01F-41B9-802E-05E0836468DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{946220A6-A01F-41B9-802E-05E0836468DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{946220A6-A01F-41B9-802E-05E0836468DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

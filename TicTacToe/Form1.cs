@@ -14,20 +14,18 @@ namespace TicTacToe
     public partial class Form1 : Form
     {
         public int?[] HumanMove { get; set; }   // ход человека
-        bool buttonPlayClicked;
         int figure; //хранится фигура, которой играет ползователь 1 - X, 2 - 0
         int countFields;
         List<Square> listSquares = new List<Square>();
         int size, x, y;
         bool checkSelectedSquare;
-        int[] step; //хранит в себе значение (координату), которое было получено из Multithreading (ход компьютера)
         int fieldValue; //хранит размер игорвого поля, например 4x4
         List<int[]> listCoordinates = new List<int[]>(); //хранятся координаты пустых ячеек
         int[,] playField; //двумерный массив (матрица), в котором хранится игровое поле
 
         public Form1()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
 
         // установка GUI
@@ -38,11 +36,19 @@ namespace TicTacToe
             CreateSquares();
             CheckFigure();
             figure = figureID;
+            if (figure == 1)
+            {
+                buttonX.BackColor = Color.Gray;
+            }
+            else if (figure == 2)
+            {
+                button0.BackColor = Color.Gray;
+            }
         }
 
         private void CheckFigure()
         {
-            if(figure == 1)
+            if (figure == 1)
             {
                 buttonX.BackColor = Color.Gray;
             }
@@ -53,21 +59,21 @@ namespace TicTacToe
         }
         private void buttonX_MouseClick(object sender, MouseEventArgs e)
         {
-            buttonX.BackColor = Color.Gray;
-            button0.BackColor = Color.LightGray;
-            figure = 1; // X (крестик)
+            //buttonX.BackColor = Color.Gray;
+            //button0.BackColor = Color.LightGray;
+            //figure = 1; // X (крестик)
         }
 
         private void button0_Click(object sender, EventArgs e)
         {
-            button0.BackColor = Color.Gray;
-            buttonX.BackColor = Color.LightGray;
-            figure = 2; // 0 (нолик)
+            //button0.BackColor = Color.Gray;
+            //buttonX.BackColor = Color.LightGray;
+            //figure = 2; // 0 (нолик)
         }
 
         private void playGround_Paint(object sender, PaintEventArgs e)
         {
-            foreach(Square s in listSquares)
+            foreach (Square s in listSquares)
             {
                 Pen myPen = new Pen(Color.Black, 3);
                 e.Graphics.DrawRectangle(myPen, s.Location.X, s.Location.Y, size, size);
@@ -75,7 +81,7 @@ namespace TicTacToe
                 if (s.Value == 1)
                 {
                     e.Graphics.FillRectangle(Brushes.Gray, s.Location.X, s.Location.Y, size, size);
-                    if(fieldValue == 3)
+                    if (fieldValue == 3)
                     {
                         e.Graphics.DrawImage(Properties.Resources.cross, s.Location.X, s.Location.Y, 80, 80);
                     }
@@ -164,6 +170,7 @@ namespace TicTacToe
             {
                 if ((s.Location.X < point.X && point.X < s.Location.X + size) && (s.Location.Y < point.Y && point.Y < s.Location.Y + size) && s.Value == 0)
                 {
+                    HumanMove = null;
                     s.Value = figure;
                     playField[s.CoordX, s.CoordY] = figure;
 
@@ -172,28 +179,42 @@ namespace TicTacToe
                     if (figure == 1)
                     {
                         playField[s.CoordX, s.CoordY] = 2;
-
                         s.Value = 2;
-
                     }
                     else
                     {
                         playField[s.CoordX, s.CoordY] = 1;
-
                         s.Value = 1;
-
                     }
+                    playGround.Invalidate();
+                    this.DialogResult = DialogResult.OK;
+
                     break;
+
+
                 }
             }
-            playGround.Invalidate();
-            HumanMove = null;
         }
 
         private void aboutProgramToolStripMenuItem_Click(object sender, EventArgs e)
         {
             About aboutProgram = new About();
             aboutProgram.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Properties.Settings ps = Properties.Settings.Default;
+            this.Top = ps.Top;
+            this.Left = ps.Left;
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings ps = Properties.Settings.Default;
+            ps.Top = this.Top;
+            ps.Left = this.Left;
+            ps.Save();
         }
 
         private void playGround_MouseMove(object sender, MouseEventArgs e)
@@ -226,13 +247,14 @@ namespace TicTacToe
                 {
                     foreach (var square in listSquares)
                     {
-                        if (square.Value != Board[i, j])
+                        if (square.CoordX == i && square.CoordY == j)
                         {
                             square.Value = Board[i, j];
                         }
                     }
                 }
             }
+            playField = Board;
             playGround.Invalidate();
         }
     }
