@@ -44,10 +44,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\2017.EPAM.Gomoku.FirstTeam.Battlefield\BattleField.csproj">
-      <Project>{b6cf0055-e139-4d8d-a249-715198dc97a0}</Project>
-      <Name>BattleField</Name>
-    </ProjectReference>
     <ProjectReference Include="..\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev.csproj">
       <Project>{3edda2bf-0c7a-492e-8aeb-9b87686d8751}</Project>
       <Name>2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev</Name>

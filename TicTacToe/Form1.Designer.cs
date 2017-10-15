@@ -36,8 +36,10 @@
             this.playGround = new System.Windows.Forms.PictureBox();
             this.button0 = new System.Windows.Forms.Button();
             this.buttonX = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playGround)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -55,7 +57,7 @@
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(739, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(766, 24);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -78,9 +80,9 @@
             // playGround
             // 
             this.playGround.BackColor = System.Drawing.Color.White;
-            this.playGround.Location = new System.Drawing.Point(189, 12);
+            this.playGround.Location = new System.Drawing.Point(6, 4);
             this.playGround.Name = "playGround";
-            this.playGround.Size = new System.Drawing.Size(538, 529);
+            this.playGround.Size = new System.Drawing.Size(1443, 1630);
             this.playGround.TabIndex = 7;
             this.playGround.TabStop = false;
             this.playGround.Paint += new System.Windows.Forms.PaintEventHandler(this.playGround_Paint);
@@ -108,12 +110,22 @@
             this.buttonX.UseVisualStyleBackColor = false;
             this.buttonX.MouseClick += new System.Windows.Forms.MouseEventHandler(this.buttonX_MouseClick);
             // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.playGround);
+            this.panel1.Location = new System.Drawing.Point(185, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(562, 547);
+            this.panel1.TabIndex = 12;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(739, 553);
-            this.Controls.Add(this.playGround);
+            this.ClientSize = new System.Drawing.Size(766, 571);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button0);
             this.Controls.Add(this.buttonX);
             this.Controls.Add(this.label2);
@@ -125,6 +137,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playGround)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,6 +151,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutProgramToolStripMenuItem;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
