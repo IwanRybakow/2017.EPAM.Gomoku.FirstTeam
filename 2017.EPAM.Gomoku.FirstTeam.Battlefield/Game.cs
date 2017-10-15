@@ -47,11 +47,11 @@ namespace BattleField
                     Console.WriteLine("This cell is already taken. Player {0} lost.", id);
                     return;
                 }
-                //catch (ArgumentOutOfRangeException)
-                //{
-                //    Console.WriteLine("Turn is out of range of the field. Player {0} lost.", id);
-                //    return;
-                //}
+                catch (ArgumentOutOfRangeException)
+                {
+                    Console.WriteLine("Turn is out of range of the field. Player {0} lost.", id);
+                    return;
+                }
                 if (checkResult(id, move))
                 {
                     Console.WriteLine("Game is over. Player {0} won.", id);

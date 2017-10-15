@@ -49,10 +49,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\2017.EPAM.Gomoku.FirstTeam.Battlefield\BattleField.csproj">
-      <Project>{b6cf0055-e139-4d8d-a249-715198dc97a0}</Project>
-      <Name>BattleField</Name>
-    </ProjectReference>
     <ProjectReference Include="..\2017.EPAM.Gomoku.FirstTeam.HumanPlayer\HumanPlayer.csproj">
       <Project>{aba3e76c-1120-4414-a652-46e95c84da53}</Project>
       <Name>HumanPlayer</Name>
