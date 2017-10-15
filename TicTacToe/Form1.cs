@@ -33,7 +33,7 @@ namespace TicTacToe
         // установка GUI
         public void SetGUI(int sizeBoard, int figureID)
         {
-            //fieldValue = sizeBoard;
+            fieldValue = sizeBoard;
             CreatePlayField(sizeBoard);
             CreateSquares();
             CheckFigure();
@@ -81,7 +81,7 @@ namespace TicTacToe
                     {
                         e.Graphics.DrawImage(Properties.Resources.cross, s.Location.X, s.Location.Y, 80, 80);
                     }
-                    else if (fieldValue == 5 || fieldValue == 6 || fieldValue == 7 || fieldValue == 8)
+                    else if (fieldValue >= 5)
                     {
                         e.Graphics.DrawImage(Properties.Resources.cross, s.Location.X, s.Location.Y, 60, 60);
                     }
@@ -97,7 +97,7 @@ namespace TicTacToe
                     {
                         e.Graphics.DrawImage(Properties.Resources.circle, s.Location.X, s.Location.Y, 80, 80);
                     }
-                    else if (fieldValue == 5 || fieldValue == 6 || fieldValue == 7 || fieldValue == 8)
+                    else if (fieldValue >= 5)
                     {
                         e.Graphics.DrawImage(Properties.Resources.circle, s.Location.X, s.Location.Y, 60, 60);
                     }
@@ -173,25 +173,17 @@ namespace TicTacToe
 
                     if (figure == 1)
                     {
-                        playField[step[0], step[1]] = 2;
-                        foreach (Square ss in listSquares)
-                        {
-                            if (ss.CoordX == step[0] && ss.CoordY == step[1])
-                            {
-                                ss.Value = 2;
-                            }
-                        }
+                        playField[s.CoordX, s.CoordY] = 2;
+
+                        s.Value = 2;
+
                     }
                     else
                     {
-                        playField[step[0], step[1]] = 1;
-                        foreach (Square ss in listSquares)
-                        {
-                            if (ss.CoordX == step[0] && ss.CoordY == step[1])
-                            {
-                                ss.Value = 1;
-                            }
-                        }
+                        playField[s.CoordX, s.CoordY] = 1;
+
+                        s.Value = 1;
+
                     }
                     break;
                 }

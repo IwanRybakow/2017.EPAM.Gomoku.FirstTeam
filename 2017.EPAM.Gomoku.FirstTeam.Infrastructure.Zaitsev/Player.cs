@@ -43,7 +43,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
                 {
                     GUI = new Form1();
                     GUI.SetGUI(Board.GetLength(0), playerID);
-                    GUI.Show();
+                    GUI.ShowDialog();
                 }
                 // передаем GUI 
                 GUI.GetBoard(Board);
