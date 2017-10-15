@@ -63,9 +63,7 @@ namespace TicTacToe
             buttonX.BackColor = Color.LightGray;
             figure = 2; // 0 (нолик)
         }
-
-       
-
+ 
         private void playGround_Paint(object sender, PaintEventArgs e)
         {
             foreach(Square s in listSquares)
