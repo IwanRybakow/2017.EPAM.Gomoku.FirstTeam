@@ -17,12 +17,7 @@ namespace TestHost
             byte lineqty = 5;
             Player player;
             Player hPlayer;
-            playBoard = new CellState.cellState[BoardSize, BoardSize];
-            for(int i = 0; i < BoardSize; i++)
-                for (int j = 0; j < BoardSize; j++)
-                {
-                    playBoard[i, j] = CellState.cellState.Empty;
-                }
+            playBoard = new CellState.cellState[BoardSize, BoardSize];            
             player = new Player();
             hPlayer = new Player();
             CellCoordinates coords;
