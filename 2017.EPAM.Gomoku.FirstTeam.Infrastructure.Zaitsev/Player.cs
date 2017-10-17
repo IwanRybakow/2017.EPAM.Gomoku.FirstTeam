@@ -36,21 +36,21 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
             CreateLocalBoard(CurrentState, qtyCellsForWin, isHuman);
 
             // если играет человек
-            if(isHuman)
+            if (isHuman)
             {
                 // создаем GUI
                 if (GUI == null)
                 {
                     GUI = new Form1();
                     GUI.SetGUI(Board.GetLength(0), playerID);
-                    GUI.Show();
                 }
                 // передаем GUI 
                 GUI.GetBoard(Board);
                 // ожидаем хода человека
-                while (GUI.HumanMove == null) ;
-                return new CellCoordinates() { X = (byte)GUI.HumanMove[0], Y = (byte)GUI.HumanMove[1] };
-
+                if (GUI.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    return new CellCoordinates() { X = (byte)GUI.HumanMove[0], Y = (byte)GUI.HumanMove[1] };
+                }
             }
 
             int[] myMove = { 0, 0 };
@@ -69,7 +69,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
                 byte[] temp = firstCoord;
                 firstCoord = new byte[2] { 0, 0 };
                 return new CellCoordinates() { X = temp[0], Y = temp[1] };
-                
+
             }
             // Вызов алгоритма в многопоточном режиме
             myMove = solver.GetOptimalStep(Board, workBoardCoords);
@@ -78,7 +78,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
             return new CellCoordinates() { X = (byte)myMove[0], Y = (byte)myMove[1] };
         }
 
-        
+
         // Инициализация локального поля        
         private void CreateLocalBoard(CellState.cellState[,] currentState, byte qtyCellsForWin, bool isHuman)
         {
