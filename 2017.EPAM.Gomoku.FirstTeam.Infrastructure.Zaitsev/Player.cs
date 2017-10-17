@@ -78,6 +78,13 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
             return new CellCoordinates() { X = (byte)myMove[0], Y = (byte)myMove[1] };
         }
 
+        // реализация интерфейса IPlayer
+        public void RefreshUI(CellState.cellState[,] CurrentState)
+        {
+            CreateLocalBoard(CurrentState, 0, true);
+            GUI.GetBoard(Board);
+            GUI.ShowDialog();
+        }
 
         // Инициализация локального поля        
         private void CreateLocalBoard(CellState.cellState[,] currentState, byte qtyCellsForWin, bool isHuman)
@@ -150,6 +157,6 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
                 firstCoord[1] = (byte)(Board.GetLength(0) / 2);
             }
             firtStep = false;
-        }
+        }        
     }
 }

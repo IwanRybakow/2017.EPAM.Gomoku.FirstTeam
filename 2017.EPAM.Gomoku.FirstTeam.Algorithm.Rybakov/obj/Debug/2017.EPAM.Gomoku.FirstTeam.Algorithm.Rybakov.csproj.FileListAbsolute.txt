@@ -1,0 +1,11 @@
+C:\Users\MEDION\Desktop\2017.EPAM.Gomoku.FirstTeam-zaitsev-gui\2017.EPAM.Gomoku.FirstTeam.Rybakov\bin\Debug\Algorithm.dll
+C:\Users\MEDION\Desktop\2017.EPAM.Gomoku.FirstTeam-zaitsev-gui\2017.EPAM.Gomoku.FirstTeam.Rybakov\bin\Debug\Algorithm.pdb
+C:\Users\MEDION\Desktop\2017.EPAM.Gomoku.FirstTeam-zaitsev-gui\2017.EPAM.Gomoku.FirstTeam.Rybakov\obj\Debug\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov.csprojResolveAssemblyReference.cache
+C:\Users\MEDION\Desktop\2017.EPAM.Gomoku.FirstTeam-zaitsev-gui\2017.EPAM.Gomoku.FirstTeam.Rybakov\obj\Debug\Algorithm.dll
+C:\Users\MEDION\Desktop\2017.EPAM.Gomoku.FirstTeam-zaitsev-gui\2017.EPAM.Gomoku.FirstTeam.Rybakov\obj\Debug\Algorithm.pdb
+d:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov\bin\Debug\Algorithm.dll
+d:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov\bin\Debug\Algorithm.pdb
+d:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov\obj\Debug\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov.csprojResolveAssemblyReference.cache
+d:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov\obj\Debug\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov.csproj.CoreCompileInputs.cache
+d:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov\obj\Debug\Algorithm.dll
+d:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov\obj\Debug\Algorithm.pdb

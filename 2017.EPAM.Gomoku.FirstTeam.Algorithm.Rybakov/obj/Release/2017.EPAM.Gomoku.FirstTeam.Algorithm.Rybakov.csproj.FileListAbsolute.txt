@@ -1,0 +1,5 @@
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Rybakov\bin\Release\Algorithm.dll
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Rybakov\bin\Release\Algorithm.pdb
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Rybakov\obj\Release\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov.csprojResolveAssemblyReference.cache
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Rybakov\obj\Release\Algorithm.dll
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Rybakov\obj\Release\Algorithm.pdb

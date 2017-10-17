@@ -1,0 +1,15 @@
+C:\Users\MEDION\Desktop\2017.EPAM.Gomoku.FirstTeam-zaitsev-gui\2017.EPAM.Gomoku.FirstTeam.Peralta\bin\Debug\MultiThreadedMiniMax.dll
+C:\Users\MEDION\Desktop\2017.EPAM.Gomoku.FirstTeam-zaitsev-gui\2017.EPAM.Gomoku.FirstTeam.Peralta\bin\Debug\MultiThreadedMiniMax.pdb
+C:\Users\MEDION\Desktop\2017.EPAM.Gomoku.FirstTeam-zaitsev-gui\2017.EPAM.Gomoku.FirstTeam.Peralta\bin\Debug\Algorithm.dll
+C:\Users\MEDION\Desktop\2017.EPAM.Gomoku.FirstTeam-zaitsev-gui\2017.EPAM.Gomoku.FirstTeam.Peralta\bin\Debug\Algorithm.pdb
+C:\Users\MEDION\Desktop\2017.EPAM.Gomoku.FirstTeam-zaitsev-gui\2017.EPAM.Gomoku.FirstTeam.Peralta\obj\Debug\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta.csprojResolveAssemblyReference.cache
+C:\Users\MEDION\Desktop\2017.EPAM.Gomoku.FirstTeam-zaitsev-gui\2017.EPAM.Gomoku.FirstTeam.Peralta\obj\Debug\MultiThreadedMiniMax.dll
+C:\Users\MEDION\Desktop\2017.EPAM.Gomoku.FirstTeam-zaitsev-gui\2017.EPAM.Gomoku.FirstTeam.Peralta\obj\Debug\MultiThreadedMiniMax.pdb
+d:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta\bin\Debug\MultiThreadedMiniMax.dll
+d:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta\bin\Debug\MultiThreadedMiniMax.pdb
+d:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta\bin\Debug\Algorithm.dll
+d:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta\bin\Debug\Algorithm.pdb
+d:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta\obj\Debug\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta.csprojResolveAssemblyReference.cache
+d:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta\obj\Debug\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta.csproj.CoreCompileInputs.cache
+d:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta\obj\Debug\MultiThreadedMiniMax.dll
+d:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta\obj\Debug\MultiThreadedMiniMax.pdb
