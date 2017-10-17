@@ -8,9 +8,9 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov
 {
     public class MiniMax
     {
-        private int qtyCellsForWin;
-        public PatternCollection ownPatterns;
-        public PatternCollection opponentPatterns;
+        private int qtyCellsForWin; 
+        public PatternCollection ownPatterns; // patterns for this algorithm
+        public PatternCollection opponentPatterns; // patterns for opponent
 
         public MiniMax(int qtyCellsForWin)
         {
@@ -43,7 +43,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov
                 scores[cell] = s;
             }
             var items = from i in scores orderby i.Value descending select i.Key;
-            List<Tuple<int, int>> cellsToCheckList = items.Take(2).ToList();
+            List<Tuple<int, int>> cellsToCheckList = items.Take(2).ToList(); // take only two top results for further processing
 
             int score = int.MinValue;
             foreach (Tuple<int, int> item in cellsToCheckList)
@@ -54,9 +54,10 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov
                     score = temp;
                 }
             }
-            return result - score;               
+            return result - score; //substruct best next move of opponent from our               
         }
 
+        //reduces quantity of moves for deep analysis
         public List<KeyValuePair<Tuple<int, int>, int>> ReduceMoves (int[,] board, IEnumerable<Tuple<int, int>> CellsToCheck)
         {
             Dictionary<Tuple<int, int>, int> iscores = new Dictionary<Tuple<int, int>, int>();
@@ -69,13 +70,14 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov
             }
             var items = from i in iscores orderby i.Value descending select i;
             List<KeyValuePair<Tuple<int, int>, int>> cellsToCheckList = items.Take(10).ToList();
-            if (cellsToCheckList[0].Value > 430000)
+            if (cellsToCheckList[0].Value > 430000) //urgently react to most obvious moves
             {
                 return cellsToCheckList.Take(1).ToList();
             }
             return cellsToCheckList;
         }
 
+        // returns estimation for move
         int Evaluate(int[,] board, Tuple<int, int> move, int sign)
         {
             int oppSign = sign == 1 ? 2 : 1;

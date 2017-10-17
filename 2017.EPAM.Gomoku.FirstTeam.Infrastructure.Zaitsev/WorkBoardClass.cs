@@ -20,7 +20,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
         private const int MIN_QUANTITY_EMPTY_CELLS = 4; // минимальное количество сводных ячее в рабочей области
         int size;   //размеры игрового поля
         bool workBoundNeed;     // а нужно ли рабочеее поле, если размер игрового поля мал
-        
+
         // конструктор. Инициализирует границы рабочего поля
         // <param name="size"> размер игрового поля </param>
         public WorkBoardClass(int size)
@@ -33,7 +33,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
                 BoundOfWorkBoard[0] = 0;
                 BoundOfWorkBoard[1] = 0;
                 BoundOfWorkBoard[2] = size - 1;
-                BoundOfWorkBoard[3] = size - 1;                
+                BoundOfWorkBoard[3] = size - 1;
                 return;
             }
             // рабочее поле нужно
@@ -58,10 +58,10 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
             BoundOfWorkBoard[0] = (size / 2) - initSize - param;
             BoundOfWorkBoard[1] = (size / 2) - initSize - param;
             BoundOfWorkBoard[2] = (size / 2) + initSize;
-            BoundOfWorkBoard[3] = (size / 2) + initSize;            
+            BoundOfWorkBoard[3] = (size / 2) + initSize;
         }
 
-        
+
         // Установка нового игрового поля, возвращает координаты внутри рабочей обаласти
         // <param name="newBoard"></param>
         public List<int[]> SetWorkBoard(int[,] newBoard)
@@ -96,23 +96,23 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
                 coords = ExpandBoundsOfWorkBoard(newBoard);
             }
             return coords;
-            
+
 
         }
 
         // расширяет границы рабочей области
         private List<int[]> ExpandBoundsOfWorkBoard(int[,] newBoard)
         {
-            // я переделаю
-            if(BoundOfWorkBoard[0] !=0 )
+            // расширяем границы с проверкой выхода из га
+            if (BoundOfWorkBoard[0] != 0)
             {
                 BoundOfWorkBoard[0]--;
             }
-            if(BoundOfWorkBoard[1] != 0)
+            if (BoundOfWorkBoard[1] != 0)
             {
                 BoundOfWorkBoard[1]--;
             }
-            if(BoundOfWorkBoard[2] != size - 1)
+            if (BoundOfWorkBoard[2] != size - 1)
             {
                 BoundOfWorkBoard[2]++;
             }
@@ -123,11 +123,9 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
             return GetCoordListInWorkBoard(newBoard);
         }
 
-        /// <summary>
-        /// находит ячеки за пределами рабочей области
-        /// </summary>
-        /// <param name="newBoard">игровое поле </param>
-        /// <returns></returns>
+        
+        // находит ячеки за пределами рабочей области
+        // <param name="newBoard">игровое поле </param>        
         private List<int[]> FindOutOfBoundCells(int[,] newBoard)
         {
             List<int[]> outOfBound = new List<int[]>();
@@ -190,7 +188,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
             return dangerousCells;
         }
 
-        
+
         // Создает список координат свободных ячеек в рабочей области        
         private List<int[]> GetCoordListInWorkBoard(int[,] newBoard)
         {
@@ -219,7 +217,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
                 foreach (int[] anotherCell in anotherCellList)
                 {
                     // Вычисляем расстоние между ячейками
-                    distance = DistancePointToPoint(cell, anotherCell);                    
+                    distance = DistancePointToPoint(cell, anotherCell);
                     if (cell != anotherCell && distance <= MAX_DISTANCE && !result.Contains(cell))
                     {
                         result.Add(cell);
@@ -296,7 +294,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
 
             // граница снизу
             GetMaximumCoordOutOfBound(0, 3);
-           
+
         }
 
         // Поиск минимальной координаты
@@ -307,8 +305,12 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
                 IEnumerable<int[]> coords = from cell in dangerousCells
                                             where cell[cellIndex] < BoundOfWorkBoard[boundIndex]
                                             select cell;
-                
-                BoundOfWorkBoard[boundIndex] = coords.Min(cellIndex) - 1;                
+                int min = coords.Min(cellIndex);
+                if (min == - 1)
+                {
+                    return;
+                }
+                BoundOfWorkBoard[boundIndex] = min - 1;
                 if (BoundOfWorkBoard[boundIndex] < 0)
                 {
                     BoundOfWorkBoard[boundIndex] = 0;
@@ -329,6 +331,11 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
                 IEnumerable<int[]> coords = from cell in dangerousCells
                                             where cell[cellIndex] > BoundOfWorkBoard[boundIndex]
                                             select cell;
+                int max = coords.Max(cellIndex);
+                if (coords.Max(cellIndex) == -1)
+                {
+                    return;
+                }
                 BoundOfWorkBoard[boundIndex] = coords.Max(cellIndex) + 1;
                 if (BoundOfWorkBoard[boundIndex] > size - 1)
                 {

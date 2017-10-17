@@ -8,7 +8,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov
 {
     public class PatternCollection
     {
-        public List<Pattern> PatternList;
+        public List<Pattern> PatternList; // collection of patterns to look in strings
         public PatternCollection(int signsInRowToWin, int ownSign)
         {
             int OppSign = ownSign == 1 ? 2 : 1;

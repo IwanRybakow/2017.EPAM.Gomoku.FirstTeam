@@ -7,7 +7,7 @@
     <ProjectGuid>{308A20AB-478A-4D4C-A27F-AC1946CD7144}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>TicTacToe</RootNamespace>
-    <AssemblyName>TicTacToe</AssemblyName>
+    <AssemblyName>2017.EPAM.Gomoku.FirstTeam.GUI.Peralta</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -125,7 +125,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\2017.EPAM.Gomoku.FirstTeam.Peralta\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta.csproj">
+    <ProjectReference Include="..\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta.csproj">
       <Project>{ad005279-56ea-4137-a60e-444ed571dfa5}</Project>
       <Name>2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta</Name>
     </ProjectReference>

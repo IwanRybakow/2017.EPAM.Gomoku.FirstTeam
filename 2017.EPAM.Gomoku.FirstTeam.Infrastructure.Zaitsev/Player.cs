@@ -21,7 +21,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
         bool firtStep;                          // флаг показывает сделан ли только что первый ход
         bool iMoveFirst;                        // флаг я хожу первым. Нужен для инициализации игрового поля.
         int playerID;                           // ID игрока 1 - Х, 2 - 0 нужно для GUI.
-
+        bool isHuman;
         public Player()
         {
             firtStep = true;
@@ -32,6 +32,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
         // реализация интерфейса IPlayer
         public CellCoordinates NextMove(CellState.cellState[,] CurrentState, byte qtyCellsForWin, bool isHuman, TimeSpan remainingTimeForGame, int remainingQtyMovesForGame)
         {
+            this.isHuman = isHuman;
             // инициализация локального игрового поля
             CreateLocalBoard(CurrentState, qtyCellsForWin, isHuman);
 
@@ -78,6 +79,16 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
             return new CellCoordinates() { X = (byte)myMove[0], Y = (byte)myMove[1] };
         }
 
+        // реализация интерфейса IPlayer
+        public void RefreshUI(CellState.cellState[,] CurrentState)
+        {
+            if (isHuman)
+            {
+                CreateLocalBoard(CurrentState, 0, true);
+                GUI.GetBoard(Board);
+                GUI.ShowDialog();
+            }
+        }
 
         // Инициализация локального поля        
         private void CreateLocalBoard(CellState.cellState[,] currentState, byte qtyCellsForWin, bool isHuman)
@@ -150,6 +161,6 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
                 firstCoord[1] = (byte)(Board.GetLength(0) / 2);
             }
             firtStep = false;
-        }
+        }        
     }
 }

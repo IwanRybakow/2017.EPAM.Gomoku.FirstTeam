@@ -57,7 +57,7 @@
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(766, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(796, 24);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -97,7 +97,6 @@
             this.button0.Size = new System.Drawing.Size(75, 78);
             this.button0.TabIndex = 5;
             this.button0.UseVisualStyleBackColor = true;
-            this.button0.Click += new System.EventHandler(this.button0_Click);
             // 
             // buttonX
             // 
@@ -108,7 +107,6 @@
             this.buttonX.Size = new System.Drawing.Size(75, 78);
             this.buttonX.TabIndex = 4;
             this.buttonX.UseVisualStyleBackColor = false;
-            this.buttonX.MouseClick += new System.Windows.Forms.MouseEventHandler(this.buttonX_MouseClick);
             // 
             // panel1
             // 
@@ -117,14 +115,14 @@
             this.panel1.Controls.Add(this.playGround);
             this.panel1.Location = new System.Drawing.Point(185, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(562, 547);
+            this.panel1.Size = new System.Drawing.Size(598, 598);
             this.panel1.TabIndex = 12;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(766, 571);
+            this.ClientSize = new System.Drawing.Size(796, 622);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button0);
             this.Controls.Add(this.buttonX);

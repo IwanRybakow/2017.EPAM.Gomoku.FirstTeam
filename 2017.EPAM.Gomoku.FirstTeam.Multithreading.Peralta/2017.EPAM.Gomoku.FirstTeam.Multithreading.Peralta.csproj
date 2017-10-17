@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MultiThreadedMiniMax</RootNamespace>
-    <AssemblyName>MultiThreadedMiniMax</AssemblyName>
+    <AssemblyName>2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
