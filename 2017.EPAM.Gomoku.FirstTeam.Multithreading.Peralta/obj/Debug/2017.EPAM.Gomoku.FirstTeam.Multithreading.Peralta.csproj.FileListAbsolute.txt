@@ -1,0 +1,7 @@
+C:\Users\MEDION\Desktop\2017.EPAM.Gomoku.FirstTeam-zaitsev-gui\2017.EPAM.Gomoku.FirstTeam.Peralta\bin\Debug\MultiThreadedMiniMax.dll
+C:\Users\MEDION\Desktop\2017.EPAM.Gomoku.FirstTeam-zaitsev-gui\2017.EPAM.Gomoku.FirstTeam.Peralta\bin\Debug\MultiThreadedMiniMax.pdb
+C:\Users\MEDION\Desktop\2017.EPAM.Gomoku.FirstTeam-zaitsev-gui\2017.EPAM.Gomoku.FirstTeam.Peralta\bin\Debug\Algorithm.dll
+C:\Users\MEDION\Desktop\2017.EPAM.Gomoku.FirstTeam-zaitsev-gui\2017.EPAM.Gomoku.FirstTeam.Peralta\bin\Debug\Algorithm.pdb
+C:\Users\MEDION\Desktop\2017.EPAM.Gomoku.FirstTeam-zaitsev-gui\2017.EPAM.Gomoku.FirstTeam.Peralta\obj\Debug\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta.csprojResolveAssemblyReference.cache
+C:\Users\MEDION\Desktop\2017.EPAM.Gomoku.FirstTeam-zaitsev-gui\2017.EPAM.Gomoku.FirstTeam.Peralta\obj\Debug\MultiThreadedMiniMax.dll
+C:\Users\MEDION\Desktop\2017.EPAM.Gomoku.FirstTeam-zaitsev-gui\2017.EPAM.Gomoku.FirstTeam.Peralta\obj\Debug\MultiThreadedMiniMax.pdb

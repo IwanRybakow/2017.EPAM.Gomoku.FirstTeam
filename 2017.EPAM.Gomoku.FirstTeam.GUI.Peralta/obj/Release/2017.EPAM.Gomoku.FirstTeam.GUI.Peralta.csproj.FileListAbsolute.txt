@@ -1,0 +1,14 @@
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\TicTacToe\bin\Release\TicTacToe.exe.config
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\TicTacToe\bin\Release\TicTacToe.exe
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\TicTacToe\bin\Release\TicTacToe.pdb
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\TicTacToe\bin\Release\MultiThreadedMiniMax.dll
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\TicTacToe\bin\Release\Algorithm.dll
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\TicTacToe\bin\Release\MultiThreadedMiniMax.pdb
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\TicTacToe\bin\Release\Algorithm.pdb
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\TicTacToe\obj\Release\2017.EPAM.Gomoku.FirstTeam.GUI.Peralta.csprojResolveAssemblyReference.cache
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\TicTacToe\obj\Release\TicTacToe.About.resources
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\TicTacToe\obj\Release\TicTacToe.Form1.resources
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\TicTacToe\obj\Release\TicTacToe.Properties.Resources.resources
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\TicTacToe\obj\Release\2017.EPAM.Gomoku.FirstTeam.GUI.Peralta.csproj.GenerateResource.Cache
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\TicTacToe\obj\Release\TicTacToe.exe
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\TicTacToe\obj\Release\TicTacToe.pdb

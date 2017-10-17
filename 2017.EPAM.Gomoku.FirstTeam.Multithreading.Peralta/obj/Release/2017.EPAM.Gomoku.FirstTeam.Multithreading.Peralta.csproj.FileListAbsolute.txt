@@ -1,0 +1,7 @@
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Peralta\bin\Release\MultiThreadedMiniMax.dll
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Peralta\bin\Release\MultiThreadedMiniMax.pdb
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Peralta\bin\Release\Algorithm.dll
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Peralta\bin\Release\Algorithm.pdb
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Peralta\obj\Release\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta.csprojResolveAssemblyReference.cache
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Peralta\obj\Release\MultiThreadedMiniMax.dll
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Peralta\obj\Release\MultiThreadedMiniMax.pdb

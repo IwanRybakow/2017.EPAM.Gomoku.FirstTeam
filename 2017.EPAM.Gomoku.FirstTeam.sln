@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta", "2017.EPAM.Gomoku.FirstTeam.Peralta\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta.csproj", "{AD005279-56EA-4137-A60E-444ED571DFA5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta", "2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta.csproj", "{AD005279-56EA-4137-A60E-444ED571DFA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov", "2017.EPAM.Gomoku.FirstTeam.Rybakov\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov.csproj", "{587B7C1B-0494-4B4E-B245-82809F6AB8D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov", "2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov.csproj", "{587B7C1B-0494-4B4E-B245-82809F6AB8D0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev", "2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev.csproj", "{3EDDA2BF-0C7A-492E-8AEB-9B87686D8751}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2017.EPAM.Gomoku.FirstTeam.GUI.Peralta", "TicTacToe\2017.EPAM.Gomoku.FirstTeam.GUI.Peralta.csproj", "{308A20AB-478A-4D4C-A27F-AC1946CD7144}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2017.EPAM.Gomoku.FirstTeam.GUI.Peralta", "2017.EPAM.Gomoku.FirstTeam.GUI.Peralta\2017.EPAM.Gomoku.FirstTeam.GUI.Peralta.csproj", "{308A20AB-478A-4D4C-A27F-AC1946CD7144}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

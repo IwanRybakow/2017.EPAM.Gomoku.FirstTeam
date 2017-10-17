@@ -1,0 +1,13 @@
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\bin\Release\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev.dll
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\bin\Release\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev.pdb
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\bin\Release\EPAM.TicTacToe.IPlayer.dll
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\bin\Release\MultiThreadedMiniMax.dll
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\bin\Release\TicTacToe.exe
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\bin\Release\Algorithm.dll
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\bin\Release\MultiThreadedMiniMax.pdb
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\bin\Release\TicTacToe.pdb
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\bin\Release\TicTacToe.exe.config
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\bin\Release\Algorithm.pdb
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\obj\Release\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev.csprojResolveAssemblyReference.cache
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\obj\Release\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev.dll
+C:\Users\MEDION\Desktop\GitHub\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\obj\Release\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev.pdb
