@@ -1,0 +1,17 @@
+D:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\TestHost\obj\Debug\TestHost.csprojResolveAssemblyReference.cache
+D:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\TestHost\obj\Debug\TestHost.csproj.CoreCompileInputs.cache
+D:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\TestHost\bin\Debug\TestHost.exe.config
+D:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\TestHost\bin\Debug\TestHost.exe
+D:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\TestHost\bin\Debug\TestHost.pdb
+D:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\TestHost\bin\Debug\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev.dll
+D:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\TestHost\bin\Debug\EPAM.TicTacToe.IPlayer.dll
+D:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\TestHost\bin\Debug\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta.dll
+D:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\TestHost\bin\Debug\2017.EPAM.Gomoku.FirstTeam.GUI.Peralta.exe
+D:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\TestHost\bin\Debug\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov.dll
+D:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\TestHost\bin\Debug\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev.pdb
+D:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\TestHost\bin\Debug\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta.pdb
+D:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\TestHost\bin\Debug\2017.EPAM.Gomoku.FirstTeam.GUI.Peralta.pdb
+D:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\TestHost\bin\Debug\2017.EPAM.Gomoku.FirstTeam.GUI.Peralta.exe.config
+D:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\TestHost\bin\Debug\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov.pdb
+D:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\TestHost\obj\Debug\TestHost.exe
+D:\Документы\EPAMProj\Gomoku\2017.EPAM.Gomoku.FirstTeam\TestHost\obj\Debug\TestHost.pdb

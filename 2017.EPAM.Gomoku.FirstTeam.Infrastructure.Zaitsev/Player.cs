@@ -16,17 +16,18 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
         WorkBoardClass WorkBoard { get; set; }  // Объект для определения рабочего поля 
         private Multithreading solver;          // Объект для вызова алгоритма в многопоточном режиме
         private Form1 GUI;                      // GUI для игры с человеком
-        public int[,] Board { get; private set; } // локальное игровое поле ,предается на обратку алгоритму
-        byte[] firstCoord;                      // координата первого хода, если я хожу первым
-        bool firtStep;                          // флаг показывает сделан ли только что первый ход
-        bool iMoveFirst;                        // флаг я хожу первым. Нужен для инициализации игрового поля.
+        public int[,] Board { get; private set; } // локальное игровое поле ,предается на обратку алгоритму        
+        bool isBoardEmpty;                          // флаг показывает сделан ли только что первый ход
+        bool IsI_MoveFirst;                        // флаг я хожу первым. Нужен для инициализации игрового поля.
         int playerID;                           // ID игрока 1 - Х, 2 - 0 нужно для GUI.
-        bool isHuman;
+        bool isHuman;                           // флаг => играет человек
+        List<int[]> movesList;
         public Player()
         {
-            firtStep = true;
-            iMoveFirst = true;
-            firstCoord = new byte[2] { 0, 0 };
+            isBoardEmpty = true;
+            IsI_MoveFirst = true;
+            playerID = 1;
+            movesList = new List<int[]>();
         }
 
         // реализация интерфейса IPlayer
@@ -54,6 +55,13 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
                 }
             }
 
+            if(isBoardEmpty)
+            {
+                isBoardEmpty = false;
+                WorkBoard = new WorkBoardClass(Board.GetLength(0));
+                return new CellCoordinates() { X = (byte) (Board.GetLength(0) / 2), Y = (byte) (Board.GetLength(0) / 2) };
+            }
+
             int[] myMove = { 0, 0 };
             // Создаем экземпляр рабочего поля
             if (WorkBoard == null)
@@ -63,15 +71,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
 
             // список координат рабочего поля
             List<int[]> workBoardCoords = WorkBoard.SetWorkBoard(Board);
-
-            // если поле пустое, то сразу занимаем ячеку вблизи середины поля
-            if (firstCoord[0] != 0)
-            {
-                byte[] temp = firstCoord;
-                firstCoord = new byte[2] { 0, 0 };
-                return new CellCoordinates() { X = temp[0], Y = temp[1] };
-
-            }
+            
             // Вызов алгоритма в многопоточном режиме
             myMove = solver.GetOptimalStep(Board, workBoardCoords);
 
@@ -90,19 +90,18 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
             }
         }
 
-        // Инициализация локального поля        
+        // Создание локального поля
         private void CreateLocalBoard(CellState.cellState[,] currentState, byte qtyCellsForWin, bool isHuman)
         {
             // первый ход данного игрока в партии; да - создаем поле int[,], инициализируем алгоритм
-            if (firtStep)
+            if (isBoardEmpty)
             {
                 if (!isHuman)
                 {
                     // если играет ИИ создаем экземляр для исполнения алгоритма ИИ в многопоточном режиме
                     solver = new Multithreading(qtyCellsForWin);
                 }
-                Board = new int[currentState.GetLength(0), currentState.GetLength(0)];
-                playerID = 1;   // инизиализируем ID крестиком
+                Board = new int[currentState.GetLength(0), currentState.GetLength(0)];                
             }
 
             // проходим по всему полю
@@ -110,57 +109,43 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
             {
                 for (int j = 0; j < currentState.GetLength(0); j++)
                 {
-                    // ячейка поля отличается от ячейки локального поля
-                    if ((int)currentState[i, j] != Board[i, j])
-                    {
-                        if (firtStep)
+                    if (Board[i, j] != (int)currentState[i, j] && Board[i, j] == 0)
+                    {   
+                        if (isBoardEmpty)
                         {
-                            // на первом ходе уже есть заполненная ячейка.
-                            // Значит первым ходит соперник
-                            iMoveFirst = false;
+                            IsI_MoveFirst = false;
                             playerID = 2;
-                        }
-                        // Инициализация локального поля
-                        // первым хожу я 
-                        if (iMoveFirst)
-                        {
-                            Board[i, j] = (int)currentState[i, j];
-                        }
-                        else
-                        {
-                            // Хожу вторым
-                            // для человека
-                            if (isHuman)
-                            {
-                                Board[i, j] = (int)currentState[i, j];
-                            }
-                            else
-                            {
-                                // Инициализация локального поля ИИ, если первым ходит соперник
-                                // инвертируем значение ячейки. Необходимо для работы алгоритма
-                                // Алгоритм вне зависимости от того, играем ли мы за крестик или нолик, считает идентификатором себя - 1
-                                switch (currentState[i, j])
-                                {
-                                    case CellState.cellState.X:
-                                        Board[i, j] = 2;
-                                        break;
-                                    case CellState.cellState.O:
-                                        Board[i, j] = 1;
-                                        break;
-                                }
-                            }
-
-                        }
+                            isBoardEmpty = false;
+                        }                        
+                        movesList.Add(new int[2] { i, j });
+                        InitLocalBoard(i, j, currentState[i,j]);
                     }
                 }
             }
-            // если поле пустое и я хожу первым, занимаем ячеку где-то в центре поля
-            if (iMoveFirst && firtStep)
+        }
+
+        // инициализация поля
+        private void InitLocalBoard(int i, int j, CellState.cellState cellState)
+        {            
+            if (IsI_MoveFirst == true || isHuman == true)
             {
-                firstCoord[0] = (byte)(Board.GetLength(0) / 2);
-                firstCoord[1] = (byte)(Board.GetLength(0) / 2);
+                Board[i, j] = (int)cellState;
             }
-            firtStep = false;
-        }        
+            else
+            {
+                // Инициализация локального поля ИИ, если первым ходит соперник
+                // инвертируем значение ячейки. Необходимо для работы алгоритма
+                // Алгоритм вне зависимости от того, играем ли мы за крестик или нолик, считает идентификатором себя - 1
+                switch (cellState)
+                {
+                    case CellState.cellState.X:
+                        Board[i, j] = 2;
+                        break;
+                    case CellState.cellState.O:
+                        Board[i, j] = 1;
+                        break;
+                }
+            }
+        }
     }
 }
