@@ -15,3 +15,9 @@ d:\Документы\EPAMProj\peralta\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomo
 d:\Документы\EPAMProj\peralta\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov\obj\Debug\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov.csproj.CoreCompileInputs.cache
 d:\Документы\EPAMProj\peralta\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov\obj\Debug\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov.dll
 d:\Документы\EPAMProj\peralta\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov\obj\Debug\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov.pdb
+d:\Документы\EPAMProj\Release\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov\bin\Debug\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov.dll
+d:\Документы\EPAMProj\Release\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov\bin\Debug\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov.pdb
+d:\Документы\EPAMProj\Release\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov\obj\Debug\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov.csprojResolveAssemblyReference.cache
+d:\Документы\EPAMProj\Release\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov\obj\Debug\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov.csproj.CoreCompileInputs.cache
+d:\Документы\EPAMProj\Release\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov\obj\Debug\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov.dll
+d:\Документы\EPAMProj\Release\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov\obj\Debug\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov.pdb

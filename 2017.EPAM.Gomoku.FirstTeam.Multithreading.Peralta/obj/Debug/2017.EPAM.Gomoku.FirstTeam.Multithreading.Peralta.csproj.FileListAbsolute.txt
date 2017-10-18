@@ -21,3 +21,11 @@ d:\Документы\EPAMProj\peralta\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomo
 d:\Документы\EPAMProj\peralta\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta\obj\Debug\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta.csproj.CoreCompileInputs.cache
 d:\Документы\EPAMProj\peralta\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta\obj\Debug\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta.dll
 d:\Документы\EPAMProj\peralta\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta\obj\Debug\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta.pdb
+d:\Документы\EPAMProj\Release\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta\bin\Debug\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta.dll
+d:\Документы\EPAMProj\Release\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta\bin\Debug\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta.pdb
+d:\Документы\EPAMProj\Release\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta\bin\Debug\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov.dll
+d:\Документы\EPAMProj\Release\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta\bin\Debug\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov.pdb
+d:\Документы\EPAMProj\Release\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta\obj\Debug\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta.csprojResolveAssemblyReference.cache
+d:\Документы\EPAMProj\Release\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta\obj\Debug\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta.csproj.CoreCompileInputs.cache
+d:\Документы\EPAMProj\Release\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta\obj\Debug\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta.dll
+d:\Документы\EPAMProj\Release\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta\obj\Debug\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta.pdb

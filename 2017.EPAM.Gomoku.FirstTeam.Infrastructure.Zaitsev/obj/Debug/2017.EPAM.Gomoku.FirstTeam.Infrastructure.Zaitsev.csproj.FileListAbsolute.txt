@@ -52,3 +52,17 @@ d:\Документы\EPAMProj\peralta\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomo
 d:\Документы\EPAMProj\peralta\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\obj\Debug\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev.csproj.CoreCompileInputs.cache
 d:\Документы\EPAMProj\peralta\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\obj\Debug\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev.dll
 d:\Документы\EPAMProj\peralta\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\obj\Debug\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev.pdb
+d:\Документы\EPAMProj\Release\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\bin\Debug\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev.dll
+d:\Документы\EPAMProj\Release\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\bin\Debug\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev.pdb
+d:\Документы\EPAMProj\Release\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\bin\Debug\2017.EPAM.Gomoku.FirstTeam.GUI.Peralta.exe
+d:\Документы\EPAMProj\Release\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\bin\Debug\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta.dll
+d:\Документы\EPAMProj\Release\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\bin\Debug\EPAM.TicTacToe.IPlayer.dll
+d:\Документы\EPAMProj\Release\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\bin\Debug\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov.dll
+d:\Документы\EPAMProj\Release\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\bin\Debug\2017.EPAM.Gomoku.FirstTeam.Multithreading.Peralta.pdb
+d:\Документы\EPAMProj\Release\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\bin\Debug\2017.EPAM.Gomoku.FirstTeam.GUI.Peralta.pdb
+d:\Документы\EPAMProj\Release\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\bin\Debug\2017.EPAM.Gomoku.FirstTeam.GUI.Peralta.exe.config
+d:\Документы\EPAMProj\Release\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\bin\Debug\2017.EPAM.Gomoku.FirstTeam.Algorithm.Rybakov.pdb
+d:\Документы\EPAMProj\Release\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\obj\Debug\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev.csprojResolveAssemblyReference.cache
+d:\Документы\EPAMProj\Release\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\obj\Debug\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev.csproj.CoreCompileInputs.cache
+d:\Документы\EPAMProj\Release\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\obj\Debug\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev.dll
+d:\Документы\EPAMProj\Release\2017.EPAM.Gomoku.FirstTeam\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev\obj\Debug\2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev.pdb
