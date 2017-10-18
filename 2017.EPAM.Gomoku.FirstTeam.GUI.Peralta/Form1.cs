@@ -130,7 +130,7 @@ namespace TicTacToe
             }
             else if (countFields >= 11)
             {
-                size = 40;
+                size = 20;
             }
             else
             {
