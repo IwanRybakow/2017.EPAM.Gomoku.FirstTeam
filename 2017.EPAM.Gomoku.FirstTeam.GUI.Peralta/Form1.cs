@@ -86,7 +86,7 @@ namespace TicTacToe
                     }
                     else if (fieldValue >= 11)
                     {
-                        e.Graphics.DrawImage(Properties.Resources.cross, s.Location.X, s.Location.Y, 40, 40);
+                        e.Graphics.DrawImage(Properties.Resources.cross, s.Location.X, s.Location.Y, 20, 20);
                     }
                 }
                 else if (s.Value == 2)
@@ -110,7 +110,7 @@ namespace TicTacToe
                     }
                     else if (fieldValue >= 11)
                     {
-                        e.Graphics.DrawImage(Properties.Resources.circle, s.Location.X, s.Location.Y, 40, 40);
+                        e.Graphics.DrawImage(Properties.Resources.circle, s.Location.X, s.Location.Y, 20, 20);
                     }
                 }
             }
