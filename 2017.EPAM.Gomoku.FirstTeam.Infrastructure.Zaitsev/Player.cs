@@ -109,7 +109,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
             {
                 for (int j = 0; j < currentState.GetLength(0); j++)
                 {
-                    if (Board[i, j] != (int)currentState[i, j] && Board[i, j] == 0)
+                    if (Board[i, j] != (int)currentState[i, j])
                     {   
                         if (isBoardEmpty)
                         {

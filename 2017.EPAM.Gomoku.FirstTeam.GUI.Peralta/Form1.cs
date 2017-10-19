@@ -57,19 +57,6 @@ namespace TicTacToe
                 button0.BackColor = Color.Gray;
             }
         }
-        private void buttonX_MouseClick(object sender, MouseEventArgs e)
-        {
-            //buttonX.BackColor = Color.Gray;
-            //button0.BackColor = Color.LightGray;
-            //figure = 1; // X (крестик)
-        }
-
-        private void button0_Click(object sender, EventArgs e)
-        {
-            //button0.BackColor = Color.Gray;
-            //buttonX.BackColor = Color.LightGray;
-            //figure = 2; // 0 (нолик)
-        }
 
         private void playGround_Paint(object sender, PaintEventArgs e)
         {
@@ -85,13 +72,21 @@ namespace TicTacToe
                     {
                         e.Graphics.DrawImage(Properties.Resources.cross, s.Location.X, s.Location.Y, 80, 80);
                     }
-                    else if (fieldValue >= 5)
+                    else if (fieldValue == 4)
+                    {
+                        e.Graphics.DrawImage(Properties.Resources.cross, s.Location.X, s.Location.Y);
+                    }
+                    else if (fieldValue >= 5 && fieldValue <= 8)
                     {
                         e.Graphics.DrawImage(Properties.Resources.cross, s.Location.X, s.Location.Y, 60, 60);
                     }
-                    else
+                    else if (fieldValue == 9 || fieldValue == 10)
                     {
-                        e.Graphics.DrawImage(Properties.Resources.cross, s.Location.X, s.Location.Y);
+                        e.Graphics.DrawImage(Properties.Resources.cross, s.Location.X, s.Location.Y, 50, 50);
+                    }
+                    else if (fieldValue >= 11)
+                    {
+                        e.Graphics.DrawImage(Properties.Resources.cross, s.Location.X, s.Location.Y, 20, 20);
                     }
                 }
                 else if (s.Value == 2)
@@ -101,13 +96,21 @@ namespace TicTacToe
                     {
                         e.Graphics.DrawImage(Properties.Resources.circle, s.Location.X, s.Location.Y, 80, 80);
                     }
-                    else if (fieldValue >= 5)
+                    else if (fieldValue == 4)
+                    {
+                        e.Graphics.DrawImage(Properties.Resources.circle, s.Location.X, s.Location.Y);
+                    }
+                    else if (fieldValue >= 5 && fieldValue <= 8)
                     {
                         e.Graphics.DrawImage(Properties.Resources.circle, s.Location.X, s.Location.Y, 60, 60);
                     }
-                    else
+                    else if (fieldValue == 9 || fieldValue == 10)
                     {
-                        e.Graphics.DrawImage(Properties.Resources.circle, s.Location.X, s.Location.Y);
+                        e.Graphics.DrawImage(Properties.Resources.circle, s.Location.X, s.Location.Y, 50, 50);
+                    }
+                    else if (fieldValue >= 11)
+                    {
+                        e.Graphics.DrawImage(Properties.Resources.circle, s.Location.X, s.Location.Y, 20, 20);
                     }
                 }
             }
@@ -120,31 +123,39 @@ namespace TicTacToe
             size = 60;
             int coordinateX = 0;
             int coordinateY = 0;
-            int startPoint = 0;
-            switch (countFields)
+            int startPoint = 10;
+            if (countFields > 8 && countFields < 11)
             {
-                case 3:
-                    startPoint = 155;
-                    size = 80;
-                    break;
-                case 4:
-                    startPoint = 135;
-                    size = 70;
-                    break;
-                case 5:
-                    startPoint = 115;
-                    break;
-                case 6:
-                    startPoint = 80;
-                    break;
-                case 7:
-                    startPoint = 45;
-                    break;
-                case 8:
-                    startPoint = 10;
-                    break;
-                default:
-                    break;
+                size = 50;
+            }
+            else if (countFields >= 11)
+            {
+                size = 20;
+            }
+            else
+            {
+                switch (countFields)
+                {
+                    case 3:
+                        startPoint = 155;
+                        size = 80;
+                        break;
+                    case 4:
+                        startPoint = 135;
+                        size = 70;
+                        break;
+                    case 5:
+                        startPoint = 115;
+                        break;
+                    case 6:
+                        startPoint = 80;
+                        break;
+                    case 7:
+                        startPoint = 45;
+                        break;
+                    default:
+                        break;
+                }
             }
             for (int i = 0; i < countFields; i++)
             {

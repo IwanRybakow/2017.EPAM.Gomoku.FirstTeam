@@ -97,7 +97,7 @@
             this.button0.Size = new System.Drawing.Size(75, 78);
             this.button0.TabIndex = 5;
             this.button0.UseVisualStyleBackColor = true;
-            this.button0.Click += new System.EventHandler(this.button0_Click);
+            
             // 
             // buttonX
             // 
@@ -108,7 +108,7 @@
             this.buttonX.Size = new System.Drawing.Size(75, 78);
             this.buttonX.TabIndex = 4;
             this.buttonX.UseVisualStyleBackColor = false;
-            this.buttonX.MouseClick += new System.Windows.Forms.MouseEventHandler(this.buttonX_MouseClick);
+            
             // 
             // panel1
             // 
