@@ -58,19 +58,20 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
             if(isBoardEmpty)
             {
                 isBoardEmpty = false;
-                WorkBoard = new WorkBoardClass(Board.GetLength(0));
-                return new CellCoordinates() { X = (byte) (Board.GetLength(0) / 2), Y = (byte) (Board.GetLength(0) / 2) };
+                int[] move = new int[2] { Board.GetLength(0) / 2, Board.GetLength(0) / 2 };
+                WorkBoard = new WorkBoardClass(Board.GetLength(0), move);
+                return new CellCoordinates() { X = (byte) move[0], Y = (byte) move[1] };
             }
 
             int[] myMove = { 0, 0 };
             // Создаем экземпляр рабочего поля
             if (WorkBoard == null)
             {
-                WorkBoard = new WorkBoardClass(Board.GetLength(0));
+                WorkBoard = new WorkBoardClass(Board.GetLength(0), movesList[0]);
             }
 
             // список координат рабочего поля
-            List<int[]> workBoardCoords = WorkBoard.SetWorkBoard(Board);
+            List<int[]> workBoardCoords = WorkBoard.SetWorkBoard(Board, movesList);
             
             // Вызов алгоритма в многопоточном режиме
             myMove = solver.GetOptimalStep(Board, workBoardCoords);
@@ -103,7 +104,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
                 }
                 Board = new int[currentState.GetLength(0), currentState.GetLength(0)];                
             }
-
+            movesList.Clear();
             // проходим по всему полю
             for (int i = 0; i < currentState.GetLength(0); i++)
             {
@@ -116,8 +117,11 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
                             IsI_MoveFirst = false;
                             playerID = 2;
                             isBoardEmpty = false;
-                        }                        
-                        movesList.Add(new int[2] { i, j });
+                        }
+                        if (Board[i, j] == 0)
+                        {
+                            movesList.Add(new int[2] { i, j });
+                        }                            
                         InitLocalBoard(i, j, currentState[i,j]);
                     }
                 }
@@ -129,6 +133,7 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
         {            
             if (IsI_MoveFirst == true || isHuman == true)
             {
+                // если ходит человек или я хожу первым
                 Board[i, j] = (int)cellState;
             }
             else
