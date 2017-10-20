@@ -98,13 +98,14 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
             }
             catch (ArgumentNullException)
             {
-                // либо нет ячеек за пределами рабочего поля, либо не найдены опасные
+                // нет ячеек за пределами рабочего поля
             }
             finally
             {
                 // Составляем список координат ячеек в рабочей области
                 coords = GetCoordsListInWorkBoard(newBoard);
             }
+
             // если свободных ячеек маало расширяем границы рабочей области
             if (coords.Count <= MIN_QUANTITY_EMPTY_CELLS)
             {
@@ -289,69 +290,65 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
         // новые границы 
         private void NewBoundsOfWorkBoard()
         {
+            bool IsBoundSet = false; // установлена новая граница рабочей области
             // граница слева
-            GetMininimumCoordOutOfBound(1, 0);
+            IsBoundSet = GetMininimumCoordOutOfBound(1, 0, IsBoundSet);
 
             // граница справа
-            GetMaximumCoordOutOfBound(1, 2);
+            IsBoundSet = GetMaximumCoordOutOfBound(1, 2, IsBoundSet);
 
             // граница сверху
-            GetMininimumCoordOutOfBound(0, 1);
+            IsBoundSet = GetMininimumCoordOutOfBound(0, 1, IsBoundSet);
 
             // граница снизу
-            GetMaximumCoordOutOfBound(0, 3);
+            IsBoundSet = GetMaximumCoordOutOfBound(0, 3, IsBoundSet);
+
+            // проверяем область на выход из границ игрового поля, если хотябы одна граница области изменилась
+            if (IsBoundSet)
+            {
+                CheckBounds();
+            }
 
         }
 
         // Поиск минимальной координаты
-        private void GetMininimumCoordOutOfBound(int cellIndex, int boundIndex)
+        private bool GetMininimumCoordOutOfBound(int cellIndex, int boundIndex, bool IsBoundSet)
         {
             try
             {
                 IEnumerable<int[]> coords = from cell in dangerousCellsList
                                             where cell[cellIndex] < BoundsOfWorkBoard[boundIndex]
-                                            select cell;
-                int min = coords.Min(cellIndex);
-                if (min == - 1)
-                {
-                    return;
-                }
-                BoundsOfWorkBoard[boundIndex] = min - 1;
-                if (BoundsOfWorkBoard[boundIndex] < 0)
-                {
-                    BoundsOfWorkBoard[boundIndex] = 0;
-                }
+                                            select cell;                
+                BoundsOfWorkBoard[boundIndex] = coords.Min(cellIndex) - initSize;                
             }
             catch (ArgumentOutOfRangeException)
             {
-                // минимум не найден оставляем границы прежними
+                // минимум не найден, граница не установлена
+                return IsBoundSet;
             }
+            // минимум найден, граница установлена
+            return true;
 
         }
 
         // поиск максимальной координаты
-        private void GetMaximumCoordOutOfBound(int cellIndex, int boundIndex)
+        private bool GetMaximumCoordOutOfBound(int cellIndex, int boundIndex, bool IsBoundSet)
         {
             try
             {
                 IEnumerable<int[]> coords = from cell in dangerousCellsList
                                             where cell[cellIndex] > BoundsOfWorkBoard[boundIndex]
                                             select cell;
-                int max = coords.Max(cellIndex);
-                if (coords.Max(cellIndex) == -1)
-                {
-                    return;
-                }
-                BoundsOfWorkBoard[boundIndex] = coords.Max(cellIndex) + 1;
-                if (BoundsOfWorkBoard[boundIndex] > size - 1)
-                {
-                    BoundsOfWorkBoard[boundIndex] = size - 1;
-                }
+               
+                BoundsOfWorkBoard[boundIndex] = coords.Max(cellIndex) + initSize;                
             }
             catch (ArgumentOutOfRangeException)
             {
-                // максимум не найден оставляем границы прежними
+                // максимум не найден, граница не установлена
+                return IsBoundSet;
             }
+            // максимум найден, граница установлена
+            return true;
         }
 
     }

@@ -25,7 +25,8 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
             }
             catch(ArgumentOutOfRangeException)
             {
-                return -1;
+                // minimum не найден
+                throw;
             }
             return minimum;
             
@@ -48,7 +49,8 @@ namespace _2017.EPAM.Gomoku.FirstTeam.Infrastructure.Zaitsev
             }
             catch(ArgumentOutOfRangeException)
             {
-                return -1;
+                // максимум не найденж
+                throw;
             }
             return currentMax;
         }
