@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="CellsListExtenssions.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WorkBoardClass.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -60,8 +61,6 @@
       <Name>2017.EPAM.Gomoku.FirstTeam.GUI.Peralta</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
